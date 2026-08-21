@@ -1,0 +1,12 @@
+site_name: RPG Archaeology
+
+nav:
+  - Inicio: index.md
+
+  - Orígenes:
+      - Influencias: influences.md
+      - The Twin Cities School: The Twin Cities School — El laboratorio antes de D&D.md
+      - Blackmoor: blackmoore.md
+      - Chainmail: chainmail.md
+      - "Dungeons & Dragons — Arneson y Gygax": Arnenson y Gygax La hisoria de D&D.md
+      - CRPG Origins: crpg_origins.md
