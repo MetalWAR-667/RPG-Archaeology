@@ -150,3 +150,7 @@ El objetivo inmediato no es publicar ni construir una gran base de datos, sino c
 - [*Chainmail*](chainmail.md)
 - [*Dungeons & Dragons*](Arnenson y Gygax La hisoria de D&D.md)
 - [Origenes del CRPG](crpg_origins.md)
+
+## Autopsias
+
+- [Wizardry I](games\wizardry_1.md)
