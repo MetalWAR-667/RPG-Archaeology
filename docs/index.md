@@ -153,4 +153,4 @@ El objetivo inmediato no es publicar ni construir una gran base de datos, sino c
 
 ## Autopsias
 
-- [Wizardry I](games\wizardry_1.md)
+- [Wizardry I](games/wizardry_1.md)
