@@ -154,3 +154,4 @@ El objetivo inmediato no es publicar ni construir una gran base de datos, sino c
 ## Autopsias
 
 - [Wizardry I](games/wizardry_1.md)
+- [Dark Heart of Uukrul](games/Dark Heart of Uukrul_cronica_arqueologica.md)
