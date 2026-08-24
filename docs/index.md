@@ -153,5 +153,6 @@ El objetivo inmediato no es publicar ni construir una gran base de datos, sino c
 
 ## Autopsias
 
-- [Wizardry I](games/wizardry_1.md)
-- [Dark Heart of Uukrul](games/Dark Heart of Uukrul_cronica_arqueologica.md)
+- [Wizardry I (1981)](games/wizardry_1.md)
+- [Dark Heart of Uukrul (1989)](games/Dark Heart of Uukrul_cronica_arqueologica.md)
+- [Bloodwych (1989)](games/Bloodwych (1989) — RPG Archaeology.md)
