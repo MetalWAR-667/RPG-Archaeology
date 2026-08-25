@@ -156,3 +156,4 @@ El objetivo inmediato no es publicar ni construir una gran base de datos, sino c
 - [Wizardry I (1981)](games/wizardry_1.md)
 - [Dark Heart of Uukrul (1989)](games/Dark Heart of Uukrul_cronica_arqueologica.md)
 - [Bloodwych (1989)](games/Bloodwych (1989) — RPG Archaeology.md)
+- [Unlimited Adventures (1993)](games/frua_dungeon_craft_authoring_archaeology_es.md)
