@@ -1,5 +1,11 @@
 # **Bloodwych (1989) — RPG Archaeology**
 
+<figure markdown>
+![Bloodwych (1989) — RPG Archaeology](../assets/images/games/bloodwych/Bloodwych-mini.png)
+</figure>
+
+[▶ Watch the episode on YouTube](YOUTUBE_VIDEO_URL)
+
 **Design, systems, and tooling archaeology report**
 
 Objective: Preserve a second reusable source of information for future design and architecture decisions in *Lands of Folklore* (LoF), especially in dungeon authoring, party, inventory, combat, magic, systemic interaction, multiplayer, and tooling.
@@ -73,12 +79,12 @@ For this report, three levels are used:
 
 ## **3.1. The Authors: "Trazere's Trinity"**
 
-**CONFIRMED**
-*Bloodwych* was not the product of a large studio, but the central effort of three individuals operating under strong technical and memory constraints.
+!!! success "CONFIRMED"
+    *Bloodwych* was not the product of a large studio, but the central effort of three individuals operating under strong technical and memory constraints.
 
-> * **Anthony "Tag" Taglione (16-bit Programming and Design):** Technical engine of the game. Wrote the engine in 68000 assembly for Amiga and Atari ST. His original motivation was to bring his tabletop *Dungeons & Dragons* games to computer to play with his friend Pete James. After seeing *Dungeon Master*, they decided the only way to surpass it was to build an engine capable of rendering two instances of the world simultaneously.  
-> * **Pete James (Art and Level Design):** University friend of Anthony. Responsible for extreme visual optimization. Designed a tileset modular and lightweight enough for the engine to draw two first-person views without collapsing the RAM of machines at the time.  
-> * **Philip Taglione (8-bit Programming):** Anthony's younger brother. Faced with the publisher's demand to launch the game on lesser systems, he rewrote and adapted all logic and architecture to Z80 assembly (ZX Spectrum, Amstrad CPC).
+    > * **Anthony "Tag" Taglione (16-bit Programming and Design):** Technical engine of the game. Wrote the engine in 68000 assembly for Amiga and Atari ST. His original motivation was to bring his tabletop *Dungeons & Dragons* games to computer to play with his friend Pete James. After seeing *Dungeon Master*, they decided the only way to surpass it was to build an engine capable of rendering two instances of the world simultaneously.
+    > * **Pete James (Art and Level Design):** University friend of Anthony. Responsible for extreme visual optimization. Designed a tileset modular and lightweight enough for the engine to draw two first-person views without collapsing the RAM of machines at the time.
+    > * **Philip Taglione (8-bit Programming):** Anthony's younger brother. Faced with the publisher's demand to launch the game on lesser systems, he rewrote and adapted all logic and architecture to Z80 assembly (ZX Spectrum, Amstrad CPC).
 
 ### **Conceptual Lesson**
 
@@ -86,9 +92,9 @@ The architecture of *Bloodwych* (ultra-compressed data, discrete cell types) was
 
 ## **3.2. Production Lesson A: Loss of Runtime Control**
 
-**CONFIRMED**
-The core team internally developed versions for Amiga, Atari ST, Spectrum, Amstrad, and Commodore 64. However, the publisher outsourced the MS-DOS (PC) port to an external studio called Walking Circles.
-The result was a technical disaster: the PC version launched with critical bugs that corrupted saves, broke switches, and made the game literally impossible to complete.
+!!! success "CONFIRMED"
+    The core team internally developed versions for Amiga, Atari ST, Spectrum, Amstrad, and Commodore 64. However, the publisher outsourced the MS-DOS (PC) port to an external studio called Walking Circles.
+    The result was a technical disaster: the PC version launched with critical bugs that corrupted saves, broke switches, and made the game literally impossible to complete.
 
 ### **Principle Extracted for LoF**
 
@@ -97,8 +103,8 @@ If LoF ever requires ports or integrations with external systems (APIs, platform
 
 ## **3.3. Production Lesson B: Flexible but Verified Scope**
 
-**STRONG**
-The game cover was commissioned to illustrator Chris Achilleos with full creative freedom. Achilleos delivered a painting featuring a massive crystal demon. The team liked the art so much that, instead of ignoring it, they returned to the code and adapted the final game design to include that exact creature as the final boss: *The Lord of Entropy*.
+!!! tip "STRONG"
+    The game cover was commissioned to illustrator Chris Achilleos with full creative freedom. Achilleos delivered a painting featuring a massive crystal demon. The team liked the art so much that, instead of ignoring it, they returned to the code and adapted the final game design to include that exact creature as the final boss: *The Lord of Entropy*.
 
 ### **Principle Extracted for LoF**
 
@@ -109,33 +115,33 @@ Although the general rule in LoF is *"I don't expand scope without permission,"*
 
 ## **4. Map Resource Per Tower**
 
-**CONFIRMED**
-Each *Bloodwych* tower has a fixed resource of:
+!!! success "CONFIRMED"
+    Each *Bloodwych* tower has a fixed resource of:
 
-> * 0x1000 bytes per tower map;  
-> * 0x38-byte header;  
-> * up to 8 floors;  
-> * the remainder (0xFC8) contains cells.
+    > * 0x1000 bytes per tower map;
+    > * 0x38-byte header;
+    > * up to 8 floors;
+    > * the remainder (0xFC8) contains cells.
 
-Each location occupies exactly:
+    Each location occupies exactly:
 
-2 bytes
+    2 bytes
 
-The header stores, among other things:
+    The header stores, among other things:
 
-> * 8 widths;  
-> * 8 heights;  
-> * 8 data offsets;  
-> * 8 X alignment offsets;  
-> * 8 Y alignment offsets;  
-> * special floor information;  
-> * upper floor number.
+    > * 8 widths;
+    > * 8 heights;
+    > * 8 data offsets;
+    > * 8 X alignment offsets;
+    > * 8 Y alignment offsets;
+    > * special floor information;
+    > * upper floor number.
 
-This allows different floors to:
+    This allows different floors to:
 
-> * have different dimensions;  
-> * be offset relative to each other;  
-> * relate vertically without needing a continuous 3D representation.
+    > * have different dimensions;
+    > * be offset relative to each other;
+    > * relate vertically without needing a continuous 3D representation.
 
 ### **Lesson**
 
@@ -150,35 +156,35 @@ and vertical connections are resolved through the relationship between grids.
 
 ## **5. Anatomy of a Cell**
 
-**CONFIRMED**
-The two bytes of each cell are exposed in the editor as four nibbles:
+!!! success "CONFIRMED"
+    The two bytes of each cell are exposed in the editor as four nibbles:
 
-Byte 0  
-  A = bits 7..4  
-  B = bits 3..0
+    Byte 0
+      A = bits 7..4
+      B = bits 3..0
 
-Byte 1  
-  C = bits 7..4  
-  D = bits 3..0
+    Byte 1
+      C = bits 7..4
+      D = bits 3..0
 
-The three lowest bits determine:
+    The three lowest bits determine:
 
-map\_type = second\_byte & 0x07
+    map\_type = second\_byte & 0x07
 
-Therefore there are exactly **8 fundamental cell types**.  
-The semantics of remaining bits depend on the type. This is equivalent to an extremely compact variant/union.
+    Therefore there are exactly **8 fundamental cell types**.
+    The semantics of remaining bits depend on the type. This is equivalent to an extremely compact variant/union.
 
 # **PART II — THE 8 CELL TYPES**
 
 ## **6. Type 0 — Space**
 
-**CONFIRMED**
-Represents free/transitable space.  
-Default semantics:
+!!! success "CONFIRMED"
+    Represents free/transitable space.
+    Default semantics:
 
-00 00
+    00 00
 
-Its main function is to establish that a dungeon position can exist without containing any special structure.
+    Its main function is to establish that a dungeon position can exist without containing any special structure.
 
 ### **Conceptual Reading**
 
@@ -186,37 +192,37 @@ EMPTY / WALKABLE SPACE
 
 ## **7. Type 1 — Stone Wall + Feature**
 
-**CONFIRMED**
-Does not represent only a stone wall.
-It can store:
+!!! success "CONFIRMED"
+    Does not represent only a stone wall.
+    It can store:
 
-> * side/orientation;  
-> * special state;  
-> * one of several wall feature types.
+    > * side/orientation;
+    > * special state;
+    > * one of several wall feature types.
 
-Documented families:
+    Documented families:
 
-SHELF  
-SIGN  
-SWITCH  
-SOCKET
+    SHELF
+    SIGN
+    SWITCH
+    SOCKET
 
-Switches can have:
+    Switches can have:
 
-> * reference;  
-> * visual state (LIT / DIM).
+    > * reference;
+    > * visual state (LIT / DIM).
 
-Sockets can have:
+    Sockets can have:
 
-> * gem family;  
-> * state FULL / EMPTY.
+    > * gem family;
+    > * state FULL / EMPTY.
 
-Signs can represent:
+    Signs can represent:
 
-> * thematic signs;  
-> * scrolls/references.
+    > * thematic signs;
+    > * scrolls/references.
 
-There is also an occlusion/hiding state.
+    There is also an occlusion/hiding state.
 
 ### **Conceptual Reading**
 
@@ -234,27 +240,27 @@ Placed / Interactive Feature
 
 ## **8. Type 2 — Wooden Structure**
 
-**CONFIRMED**
-A single cell can independently represent the four sides:
+!!! success "CONFIRMED"
+    A single cell can independently represent the four sides:
 
-N  
-E  
-S  
-W
+    N
+    E
+    S
+    W
 
-Each side uses two bits and accepts:
+    Each side uses two bits and accepts:
 
-NONE  
-WALL  
-OPEN  
-CLOSED
+    NONE
+    WALL
+    OPEN
+    CLOSED
 
-Additionally, a lock state can exist. Conceptual example:
+    Additionally, a lock state can exist. Conceptual example:
 
-N = WALL  
-E = OPEN  
-S = NONE  
-W = CLOSED
+    N = WALL
+    E = OPEN
+    S = NONE
+    W = CLOSED
 
 ### **Conceptual Reading**
 
@@ -273,14 +279,14 @@ Bloodwych integrates edges into the cell out of compression necessity. LoF extra
 
 ## **9. Type 3 — Misc Solid**
 
-**CONFIRMED**
-Groups at least:
+!!! success "CONFIRMED"
+    Groups at least:
 
-BED  
-PILLAR
+    BED
+    PILLAR
 
-This classification may seem strange from a modern ontology, but likely reflects a functional decision:  
-both are special elements occupying the cell and processed similarly by the engine.
+    This classification may seem strange from a modern ontology, but likely reflects a functional decision:
+    both are special elements occupying the cell and processed similarly by the engine.
 
 ### **Archaeological Lesson**
 
@@ -289,13 +295,13 @@ Historical data categories don't always describe "what something is" in the worl
 
 ## **10. Type 4 — Stairs**
 
-**CONFIRMED**
-Encodes:
+!!! success "CONFIRMED"
+    Encodes:
 
-Elevation: UP / DOWN  
-Direction: N / E / S / W
+    Elevation: UP / DOWN
+    Direction: N / E / S / W
 
-It doesn't need to store a complete destination in the cell itself. Vertical relationships depend on the floor's layout/alignment.
+    It doesn't need to store a complete destination in the cell itself. Vertical relationships depend on the floor's layout/alignment.
 
 ### **Conceptual Reading**
 
@@ -303,26 +309,26 @@ VERTICAL CONNECTION
 
 ## **11. Type 5 — Metal Door**
 
-**CONFIRMED**
-Metal doors are their own category. Can define:
+!!! success "CONFIRMED"
+    Metal doors are their own category. Can define:
 
-REGULAR / PORTCULLIS  
-NORTH-SOUTH / EAST-WEST  
-OPEN / CLOSED  
-LOCK TYPE
+    REGULAR / PORTCULLIS
+    NORTH-SOUTH / EAST-WEST
+    OPEN / CLOSED
+    LOCK TYPE
 
-Documented lock families by reconstructed editor:
+    Documented lock families by reconstructed editor:
 
-UNLOCKED  
-MAGE  
-BRONZE  
-IRON  
-SERPENT  
-CHAOS  
-DRAGON  
-MOON  
-CHROMATIC  
-VOID
+    UNLOCKED
+    MAGE
+    BRONZE
+    IRON
+    SERPENT
+    CHAOS
+    DRAGON
+    MOON
+    CHROMATIC
+    VOID
 
 ### **Design Lesson**
 
@@ -335,25 +341,25 @@ LoF: Door = StructuralEdge(kind = DOOR)
 
 ## **12. Type 6 — Floor / Event Surface**
 
-**CONFIRMED**
-Can represent:
+!!! success "CONFIRMED"
+    Can represent:
 
-FIZZLE  
-FLOOR HOLE  
-GREEN PAD  
-INVISIBLE PAD
+    FIZZLE
+    FLOOR HOLE
+    GREEN PAD
+    INVISIBLE PAD
 
-Additionally, independently:
+    Additionally, independently:
 
-CEILING HOLE  
-NO CEILING HOLE
+    CEILING HOLE
+    NO CEILING HOLE
 
-Pads can contain a reference to a trigger table. Example:
+    Pads can contain a reference to a trigger table. Example:
 
-Cell:  
-  invisible pad  
-  trigger\_ref = 17  
-  ceiling\_hole = true
+    Cell:
+      invisible pad
+      trigger\_ref = 17
+      ceiling\_hole = true
 
 ### **Conceptual Reading**
 
@@ -367,17 +373,17 @@ Clear example of reactive world without continuous physics. A cell can have disc
 
 ## **13. Type 7 — Magic Space**
 
-**CONFIRMED**
-Documented states:
+!!! success "CONFIRMED"
+    Documented states:
 
-SPACE  
-FIREPATH  
-MINDROCK  
-FORMWALL
+    SPACE
+    FIREPATH
+    MINDROCK
+    FORMWALL
 
-More:
+    More:
 
-POWER = 0..63
+    POWER = 0..63
 
 ### **Design Lesson**
 
@@ -412,42 +418,42 @@ Not to create huge enums, but to detect responsibility mixing.
 
 ## **15. Switch Structure**
 
-**CONFIRMED**
-A Type 1 cell can contain a switch. The cell doesn't store its behavior directly. It stores a reference to a shared definition.
+!!! success "CONFIRMED"
+    A Type 1 cell can contain a switch. The cell doesn't store its behavior directly. It stores a reference to a shared definition.
 
-STONE WALL CELL  
-      |  
-      +-- SWITCH  
-             |  
-             +-- reference  
-                  |  
-                  v  
-              SwitchRecord  
-              \------------  
-              action  
-              target X  
-              target Y
+    STONE WALL CELL
+          |
+          +-- SWITCH
+                 |
+                 +-- reference
+                      |
+                      v
+                  SwitchRecord
+                  \------------
+                  action
+                  target X
+                  target Y
 
-Each tower has:
+    Each tower has:
 
-16 switch definitions  
-4 bytes each
+    16 switch definitions
+    4 bytes each
 
 ## **16. Switch Actions**
 
-**CONFIRMED**
-The reconstructed editor identifies these actions:
+!!! success "CONFIRMED"
+    The reconstructed editor identifies these actions:
 
-0x00  NO EFFECT  
-0x02  REMOVE  
-0x04  TOGGLE WALL  
-0x06  OPEN METAL DOOR  
-0x08  ROTATE WALL  
-0x0A  TOGGLE PILLAR  
-0x0C  PLACE PILLAR  
-0x0E  ROTATE WOODEN WALL
+    0x00  NO EFFECT
+    0x02  REMOVE
+    0x04  TOGGLE WALL
+    0x06  OPEN METAL DOOR
+    0x08  ROTATE WALL
+    0x0A  TOGGLE PILLAR
+    0x0C  PLACE PILLAR
+    0x0E  ROTATE WOODEN WALL
 
-There's no general scripting language. There's a reduced vocabulary of **known verbs operating on the world.**
+    There's no general scripting language. There's a reduced vocabulary of **known verbs operating on the world.**
 
 ## **17. Conceptual Interaction Model**
 
@@ -479,12 +485,12 @@ Before introducing general scripting: **check how much dungeon can be built with
 
 ## **19. Reference Reuse**
 
-**CONFIRMED**
-Multiple cells can share the same SwitchRecord.
+!!! success "CONFIRMED"
+    Multiple cells can share the same SwitchRecord.
 
-Switch A -\  
-Switch B -----> SwitchRecord #7  
-Switch C -_/
+    Switch A -\
+    Switch B -----> SwitchRecord #7
+    Switch C -_/
 
 ### **Lesson for LoF**
 
@@ -494,21 +500,21 @@ When an Inspector modifies a shared resource: **the UI must communicate that the
 
 ## **20. Conceptual Difference Between Switch and Trigger**
 
-**CONFIRMED**
-Switch:
+!!! success "CONFIRMED"
+    Switch:
 
-action  
-x  
-y
+    action
+    x
+    y
 
-Trigger:
+    Trigger:
 
-action  
-floor  
-x  
-y
+    action
+    floor
+    x
+    y
 
-The switch works as a relatively local spatial mechanism. The trigger is a more general event tool and can explicitly affect another floor.
+    The switch works as a relatively local spatial mechanism. The trigger is a more general event tool and can explicitly affect another floor.
 
 ## **21. Known Trigger Actions**
 
@@ -532,8 +538,8 @@ PLAYER --> PARTY --> [CHAMPION, CHAMPION, ...]
 
 ## **23. Subpositions Within a Cell**
 
-**CONFIRMED**
-There are five subpositions: 0 near right, 1 near left, 2 rear left, 3 rear right, 4 centre
+!!! success "CONFIRMED"
+    There are five subpositions: 0 near right, 1 near left, 2 rear left, 3 rear right, 4 centre
 
 ### **Lesson**
 
@@ -548,16 +554,16 @@ Clear separation of Level, Attributes, Resource Pools, Knowledge, Equipment, Pos
 
 ## **25. Individual Inventory**
 
-**CONFIRMED**
-Each champion maintains its own inventory (12 visible slots).
+!!! success "CONFIRMED"
+    Each champion maintains its own inventory (12 visible slots).
 
-Party control = shared operational layer  
-Inventory = individual ownership
+    Party control = shared operational layer
+    Inventory = individual ownership
 
 ## **26. Derived Stats**
 
-**CONFIRMED**
-Final protection combines base value + equipment + states + hand armor + shield.
+!!! success "CONFIRMED"
+    Final protection combines base value + equipment + states + hand armor + shield.
 
 ### **Lesson for LoF**
 
@@ -567,21 +573,21 @@ Prefer, when it makes sense, derived stats from explicit sources over storing th
 
 ## **27-30. Magic and Level-up**
 
-**CONFIRMED**
-The 32 spells are represented via individual flags. Knowledge is stored per individual. There's also a separate runtime spell practice matrix.  
-The level's contribution to casting varies by profession. The same Level is mechanically interpreted differently depending on the character.
+!!! success "CONFIRMED"
+    The 32 spells are represented via individual flags. Knowledge is stored per individual. There's also a separate runtime spell practice matrix.
+    The level's contribution to casting varies by profession. The same Level is mechanically interpreted differently depending on the character.
 
 # **PART IX — COMMUNICATION AND AGENCY**
 
 ## **31. Real-time Communication**
 
-**STRONG**
-Bloodwych integrates communication, trade, and interaction within the same game interface (trade, threaten, bribe, praise, etc.). It's compact and compatible with real-time play.
+!!! tip "STRONG"
+    Bloodwych integrates communication, trade, and interaction within the same game interface (trade, threaten, bribe, praise, etc.). It's compact and compatible with real-time play.
 
 ## **32. Companion Agency**
 
-**STRONG**
-Social interactions influence companion autonomy. A companion could maintain a small set of tendencies (loyalty, confidence, aggression) as modifiers for micro-decisions.
+!!! tip "STRONG"
+    Social interactions influence companion autonomy. A companion could maintain a small set of tendencies (loyalty, confidence, aggression) as modifiers for micro-decisions.
 
 # **PART X — MULTIPLAYER**
 
@@ -598,8 +604,8 @@ The reasonable policy for LoF is single-player product, but avoid gratuitous ass
 
 ## **35. Not Just a Map Editor**
 
-**CONFIRMED**
-The community AMOS editor was able to handle references and data for towers, switches, monsters, stats, etc. Classic example of scope creep in tooling.
+!!! success "CONFIRMED"
+    The community AMOS editor was able to handle references and data for towers, switches, monsters, stats, etc. Classic example of scope creep in tooling.
 
 ## **36. Modern Editor Modes**
 

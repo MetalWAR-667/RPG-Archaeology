@@ -276,28 +276,28 @@ Pero uno de sus cambios fundamentales de perspectiva ya está presente.
 
 Debemos evitar interpretar *Braunstein* retrospectivamente como si Wesely hubiera organizado una sesión moderna de RPG.
 
-**HECHO DOCUMENTADO**
+!!! success "HECHO DOCUMENTADO"
 
->*Braunstein* introdujo roles individuales, objetivos diferenciados, información incompleta y adjudicación mediante referee.
+    >*Braunstein* introdujo roles individuales, objetivos diferenciados, información incompleta y adjudicación mediante referee.
 
-**INFERENCIA HISTÓRICA**
+!!! tip "INFERENCIA HISTÓRICA"
 
->Estas características constituyen antecedentes claros de prácticas posteriormente centrales en los juegos de rol.
+    >Estas características constituyen antecedentes claros de prácticas posteriormente centrales en los juegos de rol.
 
-**PRECAUCIÓN**
+!!! warning "PRECAUCIÓN"
 
->Eso no significa que *Braunstein* contuviera ya todos los elementos que posteriormente definirían el RPG:
+    >Eso no significa que *Braunstein* contuviera ya todos los elementos que posteriormente definirían el RPG:
 
-- campaña persistente;
-- personaje persistente desarrollado durante numerosas sesiones;
-- progresión sistemática;
-- dungeon crawl;
-- clases;
-- niveles;
-- sistema de experiencia;
-- estructura moderna de grupo de aventureros.
+    - campaña persistente;
+    - personaje persistente desarrollado durante numerosas sesiones;
+    - progresión sistemática;
+    - dungeon crawl;
+    - clases;
+    - niveles;
+    - sistema de experiencia;
+    - estructura moderna de grupo de aventureros.
 
-Es precisamente la evolución posterior la que nos interesa.
+    Es precisamente la evolución posterior la que nos interesa.
 
 ## 10. El experimento continúa
 
@@ -718,20 +718,20 @@ Entre ellos aparecen recuerdos sobre:
 
 Debe tratarse principalmente como:
 
-**TESTIMONIO POSTERIOR DE PARTICIPANTES**
+!!! quote "TESTIMONIO POSTERIOR DE PARTICIPANTES"
 
-y no como documentación contemporánea de 1969–1971.
+    y no como documentación contemporánea de 1969–1971.
 
-Esto no reduce su enorme valor.
+    Esto no reduce su enorme valor.
 
-Simplemente obliga a contrastar, cuando sea posible, afirmaciones concretas con:
+    Simplemente obliga a contrastar, cuando sea posible, afirmaciones concretas con:
 
-- documentos contemporáneos;
-- fanzines;
-- mapas;
-- manuscritos;
-- correspondencia;
-- publicaciones tempranas.
+    - documentos contemporáneos;
+    - fanzines;
+    - mapas;
+    - manuscritos;
+    - correspondencia;
+    - publicaciones tempranas.
 
 ## 22. Una innovación colectiva
 
@@ -898,23 +898,23 @@ La innovación circulaba.
 
 Después de esta investigación podemos responder con mayor precisión.
 
-**FORMULACIÓN DEMASIADO FUERTE**
+!!! failure "FORMULACIÓN DEMASIADO FUERTE"
 
->Dave Arneson inventó él solo el juego de rol.
+    >Dave Arneson inventó él solo el juego de rol.
 
-**FORMULACIÓN DEMASIADO DÉBIL**
+!!! failure "FORMULACIÓN DEMASIADO DÉBIL"
 
->Arneson simplemente añadió fantasía a los wargames.
+    >Arneson simplemente añadió fantasía a los wargames.
 
-**FORMULACIÓN PROVISIONAL**
+!!! abstract "FORMULACIÓN PROVISIONAL"
 
->Dave Arneson fue la figura central en la consolidación de *Blackmoor*, una de las primeras campañas conocidas donde diferentes innovaciones procedentes del wargaming y de los experimentos de *Braunstein* se combinaron en una forma persistente de juego claramente reconocible como antecedente directo del RPG moderno.
+    >Dave Arneson fue la figura central en la consolidación de *Blackmoor*, una de las primeras campañas conocidas donde diferentes innovaciones procedentes del wargaming y de los experimentos de *Braunstein* se combinaron en una forma persistente de juego claramente reconocible como antecedente directo del RPG moderno.
 
-Su importancia no exige borrar a Wesely ni a los demás.
+    Su importancia no exige borrar a Wesely ni a los demás.
 
-Al contrario.
+    Al contrario.
 
-Comprender el ecosistema permite apreciar mejor qué transformación concreta realizó Arneson.
+    Comprender el ecosistema permite apreciar mejor qué transformación concreta realizó Arneson.
 
 ## 28. ¿Por qué Blackmoor y no Braunstein?
 

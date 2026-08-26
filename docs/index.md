@@ -142,6 +142,8 @@ La documentación se mantiene en Markdown y se visualiza mediante MkDocs.
 
 El objetivo inmediato no es publicar ni construir una gran base de datos, sino crear un corpus pequeño, legible y bien conectado.
 
+[▶ RPG Archaeology en YouTube](https://www.youtube.com/playlist?list=PLSfHhJ-i_zDM)
+
 ## Influences
 
 - [Influences](influences.md)

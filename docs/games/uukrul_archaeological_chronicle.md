@@ -8,6 +8,12 @@
 
 ------------------------------------------------------------------------
 
+<figure markdown>
+![The Dark Heart of Uukrul — Crónica arqueológica — RPG Archaeology](../assets/images/games/uukrul/Uukrul_RPG_Archaeology_YouTube_Thumbnail.png)
+</figure>
+
+[▶ Ver episodio en YouTube](YOUTUBE_VIDEO_URL)
+
 ## Prólogo --- Entramos buscando un mapa
 
 Hay excavaciones que empiezan con una gran pregunta y otras que empiezan

@@ -22,31 +22,31 @@ La hipótesis que ha surgido es que estamos proyectando sobre aquellos mapas una
 
 ## 2. Contexto: Blackmoor no apareció como un RPG terminado
 
-**HECHO DOCUMENTADO**
+!!! success "HECHO DOCUMENTADO"
 
->*Blackmoor* surgió dentro de la comunidad wargamer de las Twin Cities y del entorno de experimentación generado alrededor de los *Braunstein* de David Wesely.
+    >*Blackmoor* surgió dentro de la comunidad wargamer de las Twin Cities y del entorno de experimentación generado alrededor de los *Braunstein* de David Wesely.
 
-*Braunstein* había introducido elementos fundamentales:
+    *Braunstein* había introducido elementos fundamentales:
 
-- participantes controlando personajes individuales;
-- objetivos distintos para cada participante;
-- información incompleta;
-- acciones no necesariamente previstas por las reglas;
-- un referee encargado de adjudicar sus consecuencias.
+    - participantes controlando personajes individuales;
+    - objetivos distintos para cada participante;
+    - información incompleta;
+    - acciones no necesariamente previstas por las reglas;
+    - un referee encargado de adjudicar sus consecuencias.
 
-Arneson participó en este entorno.
+    Arneson participó en este entorno.
 
-Existe además documentación contemporánea de abril de 1971 anunciando un "medieval *Braunstein*" de Arneson, antecedente inmediato de *Blackmoor*.
+    Existe además documentación contemporánea de abril de 1971 anunciando un "medieval *Braunstein*" de Arneson, antecedente inmediato de *Blackmoor*.
 
-La cronología exacta de las primeras sesiones sigue siendo objeto de investigación.
+    La cronología exacta de las primeras sesiones sigue siendo objeto de investigación.
 
-Algunas fuentes y reconstrucciones sitúan antecedentes de la campaña ya en 1970, mientras que durante 1971 encontramos evidencias más claras del desarrollo de *Blackmoor*.
+    Algunas fuentes y reconstrucciones sitúan antecedentes de la campaña ya en 1970, mientras que durante 1971 encontramos evidencias más claras del desarrollo de *Blackmoor*.
 
-**CONCLUSIÓN**
+!!! abstract "CONCLUSIÓN"
 
->*Blackmoor* no parece haber aparecido mediante la escritura previa de un nuevo reglamento.
+    >*Blackmoor* no parece haber aparecido mediante la escritura previa de un nuevo reglamento.
 
->Parece haber evolucionado mediante juego.
+    >Parece haber evolucionado mediante juego.
 
 ## 3. Una campaña que generaba sus propias reglas
 
@@ -115,9 +115,11 @@ Esto proporciona una conexión plausible entre *Civil War Ironclads* y determina
 
 ### Estado de la evidencia
 
-**DOCUMENTADO:** Arneson declaró esta influencia.
+!!! success "DOCUMENTADO"
+    Arneson declaró esta influencia.
 
-**NO DEMOSTRADO TODAVÍA:** la genealogía matemática exacta entre las reglas de *Ironclads*, las primeras reglas de *Blackmoor* y las posteriores de *D&D*.
+!!! failure "NO DEMOSTRADO TODAVÍA"
+    la genealogía matemática exacta entre las reglas de *Ironclads*, las primeras reglas de *Blackmoor* y las posteriores de *D&D*.
 
 Por tanto no debe escribirse:
 
@@ -227,13 +229,13 @@ Las intersecciones no necesitan producirse en centros de casilla.
 
 Las habitaciones no necesitan corresponder a conjuntos ortogonales de celdas.
 
-**HECHO OBSERVABLE**
+!!! example "HECHO OBSERVABLE"
 
->En estos mapas: Grid ≠ geometría discretizada.
+    >En estos mapas: Grid ≠ geometría discretizada.
 
-La cuadrícula constituye un soporte métrico sobre el que se representa geometría de mayor libertad.
+    La cuadrícula constituye un soporte métrico sobre el que se representa geometría de mayor libertad.
 
-Eso todavía no demuestra cómo funcionaba el movimiento durante las sesiones.
+    Eso todavía no demuestra cómo funcionaba el movimiento durante las sesiones.
 
 ## 8. El hallazgo de los mapas de David Megarry
 
@@ -316,27 +318,27 @@ Las anotaciones permiten además reconstruir aproximadamente una escala de:
 
 Nuestra hipótesis inicial puede por tanto refinarse.
 
-**HECHO DOCUMENTADO**
+!!! success "HECHO DOCUMENTADO"
 
->Los jugadores utilizaban papel cuadriculado para cartografiar.
+    >Los jugadores utilizaban papel cuadriculado para cartografiar.
 
->Arneson comunicaba el espacio mediante distancias, dimensiones y relaciones espaciales.
+    >Arneson comunicaba el espacio mediante distancias, dimensiones y relaciones espaciales.
 
->Los mapas utilizaban una escala.
+    >Los mapas utilizaban una escala.
 
-**COMPORTAMIENTO OBSERVABLE**
+!!! example "COMPORTAMIENTO OBSERVABLE"
 
->La geometría atraviesa libremente las unidades de la cuadrícula.
+    >La geometría atraviesa libremente las unidades de la cuadrícula.
 
-**INFERENCIA FUERTE**
+!!! tip "INFERENCIA FUERTE"
 
->La cuadrícula parece haber funcionado principalmente como instrumento métrico/cartográfico, no como definición obligatoria de la topología espacial.
+    >La cuadrícula parece haber funcionado principalmente como instrumento métrico/cartográfico, no como definición obligatoria de la topología espacial.
 
-**NO DEMOSTRADO**
+!!! failure "NO DEMOSTRADO"
 
->Todavía no sabemos con suficiente evidencia si determinados procedimientos de movimiento, tiempo o encuentros utilizaban también las unidades de esa cuadrícula.
+    >Todavía no sabemos con suficiente evidencia si determinados procedimientos de movimiento, tiempo o encuentros utilizaban también las unidades de esa cuadrícula.
 
-Ésta sigue siendo una pregunta abierta.
+    Ésta sigue siendo una pregunta abierta.
 
 ## 11. La diagonal probablemente no era una categoría especial
 
@@ -380,28 +382,28 @@ No existe necesariamente ningún problema especial de "movimiento diagonal".
 
 Aquí debemos separar cuidadosamente observación e intención.
 
-**COMPORTAMIENTO OBSERVABLE**
+!!! example "COMPORTAMIENTO OBSERVABLE"
 
-Las diagonales dificultan considerablemente la cartografía manual.
+    Las diagonales dificultan considerablemente la cartografía manual.
 
-Experiencias modernas jugando con mapas de *Blackmoor* han mostrado jugadores:
+    Experiencias modernas jugando con mapas de *Blackmoor* han mostrado jugadores:
 
-- perdiendo orientación;
-- interpretando incorrectamente intersecciones;
-- cerrando loops de manera equivocada;
-- creyendo visitar espacios nuevos cuando estaban regresando a lugares conocidos.
+    - perdiendo orientación;
+    - interpretando incorrectamente intersecciones;
+    - cerrando loops de manera equivocada;
+    - creyendo visitar espacios nuevos cuando estaban regresando a lugares conocidos.
 
-La geometría oblicua es, por tanto, objetivamente capaz de producir desorientación.
+    La geometría oblicua es, por tanto, objetivamente capaz de producir desorientación.
 
-**NO DEMOSTRADO**
+!!! failure "NO DEMOSTRADO"
 
->No tenemos todavía evidencia suficiente para afirmar:
+    >No tenemos todavía evidencia suficiente para afirmar:
 
-> "Arneson utilizaba deliberadamente diagonales para desorientar a los jugadores."
+    > "Arneson utilizaba deliberadamente diagonales para desorientar a los jugadores."
 
-Es perfectamente posible.
+    Es perfectamente posible.
 
-Pero existe una explicación alternativa más sencilla.
+    Pero existe una explicación alternativa más sencilla.
 
 ## 13. Hipótesis cartográfica
 

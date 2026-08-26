@@ -800,13 +800,13 @@ Algunos testimonios han enfatizado dificultades de Arneson para ajustarse a los 
 
 Otros participantes de aquella época ofrecen una imagen más compleja de la cultura interna de TSR.
 
-**PRECAUCIÓN**
+!!! warning "PRECAUCIÓN"
 
-> No debemos reducir su salida a: "Arneson no cumplía *deadlines* y TSR lo despidió."
+    > No debemos reducir su salida a: "Arneson no cumplía *deadlines* y TSR lo despidió."
 
-La evidencia disponible apunta a una relación bastante más compleja.
+    La evidencia disponible apunta a una relación bastante más compleja.
 
-El asunto merece estudiarse mediante documentación específica si en el futuro queremos reconstruirlo con mayor precisión.
+    El asunto merece estudiarse mediante documentación específica si en el futuro queremos reconstruirlo con mayor precisión.
 
 ## 24. La transformación de TSR
 

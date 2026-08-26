@@ -280,28 +280,28 @@ But one of its fundamental perspective shifts is already present.
 
 We should avoid interpreting *Braunstein* retrospectively as if Wesley had organized a modern RPG session.
 
-**DOCUMENTED FACT**
+!!! success "DOCUMENTED FACT"
 
->*Braunstein* introduced individual roles, differentiated objectives, incomplete information, and referee adjudication.
+    >*Braunstein* introduced individual roles, differentiated objectives, incomplete information, and referee adjudication.
 
-**HISTORICAL INFERENCE**
+!!! tip "HISTORICAL INFERENCE"
 
->These characteristics constitute clear antecedents of practices later central to role-playing games.
+    >These characteristics constitute clear antecedents of practices later central to role-playing games.
 
-**CAUTION**
+!!! warning "CAUTION"
 
-> This does not mean *Braunstein* already contained all the elements that would later define the RPG:
+    > This does not mean *Braunstein* already contained all the elements that would later define the RPG:
 
-- persistent campaign;
-- persistent character developed through numerous sessions;
-- systematic progression;
-- dungeon crawl;
-- classes;
-- levels;
-- experience system;
-- modern adventurer party structure.
+    - persistent campaign;
+    - persistent character developed through numerous sessions;
+    - systematic progression;
+    - dungeon crawl;
+    - classes;
+    - levels;
+    - experience system;
+    - modern adventurer party structure.
 
-It is precisely the subsequent evolution that interests us.
+    It is precisely the subsequent evolution that interests us.
 
 ## 10. The experiment continues
 
@@ -718,20 +718,20 @@ Among them appear memories about:
 
 It should be treated mainly as:
 
-**POSTERIOR TESTIMONY OF PARTICIPANTS**
+!!! quote "POSTERIOR TESTIMONY OF PARTICIPANTS"
 
-and not as contemporary documentation of 1969–1971.
+    and not as contemporary documentation of 1969–1971.
 
-This doesn't reduce its enormous value.
+    This doesn't reduce its enormous value.
 
-It simply requires that specific claims be contrasted with:
+    It simply requires that specific claims be contrasted with:
 
-- contemporary documents;
-- fanzines;
-- maps;
-- manuscripts;
-- correspondence;
-- early publications.
+    - contemporary documents;
+    - fanzines;
+    - maps;
+    - manuscripts;
+    - correspondence;
+    - early publications.
 
 ## 22. A collective innovation
 
@@ -898,23 +898,23 @@ Innovation circulated.
 
 After this research, we can respond with greater precision.
 
-**TOO STRONG FORMULATION**
+!!! failure "TOO STRONG FORMULATION"
 
->Dave Arneson alone invented the role-playing game.
+    >Dave Arneson alone invented the role-playing game.
 
-**TOO WEAK FORMULATION**
+!!! failure "TOO WEAK FORMULATION"
 
->Arneson simply added fantasy to wargames.
+    >Arneson simply added fantasy to wargames.
 
-**PROVISIONAL FORMULATION**
+!!! abstract "PROVISIONAL FORMULATION"
 
->Dave Arneson was the central figure in the consolidation of *Blackmoor*, one of the first campaigns known where different innovations from wargaming and *Braunstein* experiments combined in a persistent and recognizable form that was a direct antecedent of the modern RPG.
+    >Dave Arneson was the central figure in the consolidation of *Blackmoor*, one of the first campaigns known where different innovations from wargaming and *Braunstein* experiments combined in a persistent and recognizable form that was a direct antecedent of the modern RPG.
 
-His importance does not require erasing Wesley or the others.
+    His importance does not require erasing Wesley or the others.
 
-On the contrary.
+    On the contrary.
 
-Understanding the ecosystem allows appreciating better what concrete transformation Arneson actually performed.
+    Understanding the ecosystem allows appreciating better what concrete transformation Arneson actually performed.
 
 ## 28. Why Blackmoor and not Braunstein?
 

@@ -2,6 +2,39 @@ site_name: RPG Archaeology
 
 theme:
   name: material
+  logo: assets/images/common/logo.png
+  favicon: assets/images/common/favicon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: brown
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: brown
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo claro
+  features:
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - search.highlight
+    - search.suggest
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - md_in_html
+  - toc:
+      permalink: true
 
 plugins:
   - search

@@ -38,34 +38,34 @@ Y, especialmente:
 
 La historia de *Chainmail* no comienza únicamente con Gary Gygax.
 
-**HECHO DOCUMENTADO**
+!!! success "HECHO DOCUMENTADO"
 
-Jeff Perren, miembro de la comunidad de wargamers de Lake Geneva, había desarrollado unas reglas para representar combates medievales con miniaturas.
+    Jeff Perren, miembro de la comunidad de wargamers de Lake Geneva, había desarrollado unas reglas para representar combates medievales con miniaturas.
 
-Gygax tomó aquellas reglas como punto de partida, las amplió considerablemente y participó en su circulación dentro de las comunidades de wargaming.
+    Gygax tomó aquellas reglas como punto de partida, las amplió considerablemente y participó en su circulación dentro de las comunidades de wargaming.
 
-Versiones tempranas de estas reglas aparecieron antes de la edición comercial: una versión titulada *Geneva Medieval Miniatures* apareció en *Panzerfaust* en abril de 1970 y otra versión fue publicada en *Domesday Book #5* en julio de ese año.
+    Versiones tempranas de estas reglas aparecieron antes de la edición comercial: una versión titulada *Geneva Medieval Miniatures* apareció en *Panzerfaust* en abril de 1970 y otra versión fue publicada en *Domesday Book #5* en julio de ese año.
 
-Por tanto:
+    Por tanto:
 
-```text
-JEFF PERREN
-reglas medievales
-     │
-     ▼
-PERREN + GYGAX
-desarrollo y expansión
-     │
-     ▼
-circulación en el hobby
-     │
-     ▼
-CHAINMAIL
-```
+    ```text
+    JEFF PERREN
+    reglas medievales
+         │
+         ▼
+    PERREN + GYGAX
+    desarrollo y expansión
+         │
+         ▼
+    circulación en el hobby
+         │
+         ▼
+    CHAINMAIL
+    ```
 
-Esto es importante para RPG Archaeology.
+    Esto es importante para RPG Archaeology.
 
-Si queremos evitar construir una historia basada exclusivamente en grandes nombres, Perren debe conservar su lugar en la genealogía.
+    Si queremos evitar construir una historia basada exclusivamente en grandes nombres, Perren debe conservar su lugar en la genealogía.
 
 ## 3. La Castle & Crusade Society
 
@@ -98,75 +98,75 @@ Lowry estaba preparando una colección de reglamentos denominada *Wargaming with
 
 El primer título publicado dentro de esa colección fue precisamente *Chainmail*.
 
-**HECHO DOCUMENTADO**
+!!! success "HECHO DOCUMENTADO"
 
-La primera edición comercial apareció en 1971, acreditada a:
+    La primera edición comercial apareció en 1971, acreditada a:
 
-Gary Gygax & Jeff Perren
+    Gary Gygax & Jeff Perren
 
-y publicada por Guidon Games.
+    y publicada por Guidon Games.
 
-La edición tenía aproximadamente sesenta páginas y contenía algo que acabaría siendo mucho más importante históricamente de lo que probablemente sugería su tamaño:
+    La edición tenía aproximadamente sesenta páginas y contenía algo que acabaría siendo mucho más importante históricamente de lo que probablemente sugería su tamaño:
 
-*Fantasy Supplement*
+    *Fantasy Supplement*
 
-La primera edición dedicaba unas quince páginas a estas reglas fantásticas.
+    La primera edición dedicaba unas quince páginas a estas reglas fantásticas.
 
 ## 5. Qué era realmente Chainmail
 
 Es importante no reinterpretar *Chainmail* retrospectivamente como un proto-RPG.
 
-**HECHO DOCUMENTADO**
+!!! success "HECHO DOCUMENTADO"
 
-*Chainmail* era fundamentalmente un wargame medieval de miniaturas.
+    *Chainmail* era fundamentalmente un wargame medieval de miniaturas.
 
-Su objetivo principal era proporcionar procedimientos para representar enfrentamientos militares medievales sobre una mesa.
+    Su objetivo principal era proporcionar procedimientos para representar enfrentamientos militares medievales sobre una mesa.
 
-Incluía diferentes escalas y procedimientos relacionados con:
+    Incluía diferentes escalas y procedimientos relacionados con:
 
-- tropas;
-- movimiento;
-- combate;
-- armaduras;
-- armas;
-- moral;
-- formaciones;
-- terreno;
-- asedios;
-- combate individual;
-- justas.
+    - tropas;
+    - movimiento;
+    - combate;
+    - armaduras;
+    - armas;
+    - moral;
+    - formaciones;
+    - terreno;
+    - asedios;
+    - combate individual;
+    - justas.
 
-La representación continuaba perteneciendo al paradigma del wargaming:
+    La representación continuaba perteneciendo al paradigma del wargaming:
 
-```text
-MINIATURAS
-     +
-TERRENO
-     +
-DISTANCCIAS
-     +
-TIPOS DE TROPA
-     +
-REGLAS
-     ↓
-BATALLA SIMULADA
-```
+    ```text
+    MINIATURAS
+         +
+    TERRENO
+         +
+    DISTANCCIAS
+         +
+    TIPOS DE TROPA
+         +
+    REGLAS
+         ↓
+    BATALLA SIMULADA
+    ```
 
-El jugador seguía controlando fundamentalmente fuerzas militares.
+    El jugador seguía controlando fundamentalmente fuerzas militares.
 
-Todavía no estamos ante:
+    Todavía no estamos ante:
 
-```text
-PERSONAJE
-    ↓
-MUNDO PERSISTENTE
-    ↓
-EXPLORACIÓN
-    ↓
-AVENTURA
-```
+    ```text
+    PERSONAJE
+        ↓
+    MUNDO PERSISTENTE
+        ↓
+    EXPLORACIÓN
+        ↓
+    AVENTURA
+    ```
 
-Ese salto pertenece a otra parte de nuestra genealogía.
+    Ese salto pertenece a otra parte de nuestra genealogía.
 
 ## 6. Diferentes escalas de combate
 
@@ -186,19 +186,19 @@ COMBATIENTE INDIVIDUAL
 
 Pero debemos evitar una conclusión demasiado rápida.
 
-**NO DEMOSTRADO**
+!!! failure "NO DEMOSTRADO"
 
-> Combatir a escala individual no convierte automáticamente al combatiente en un personaje de RPG.
+    > Combatir a escala individual no convierte automáticamente al combatiente en un personaje de RPG.
 
-Puede existir:
+    Puede existir:
 
-individualización táctica
+    individualización táctica
 
-sin existir todavía:
+    sin existir todavía:
 
-identidad persistente del personaje.
+    identidad persistente del personaje.
 
-Ésa será una diferencia fundamental cuando comparemos *Chainmail* con *Blackmoor*.
+    Ésa será una diferencia fundamental cuando comparemos *Chainmail* con *Blackmoor*.
 
 ## 7. El Fantasy Supplement
 
@@ -262,15 +262,15 @@ Tenemos ahora figuras individuales con capacidades muy superiores a las unidades
 
 Sin embargo:
 
-**PRECAUCIÓN**
+!!! warning "PRECAUCIÓN"
 
-> No debemos proyectar automáticamente sobre estos *Heroes* el concepto posterior de personaje de *D&D*.
+    > No debemos proyectar automáticamente sobre estos *Heroes* el concepto posterior de personaje de *D&D*.
 
-Todavía pertenecen al contexto de una batalla de miniaturas.
+    Todavía pertenecen al contexto de una batalla de miniaturas.
 
-Lo interesante arqueológicamente es observar cómo el wargaming empieza a disponer de vocabulario para representar individuos extraordinarios.
+    Lo interesante arqueológicamente es observar cómo el wargaming empieza a disponer de vocabulario para representar individuos extraordinarios.
 
-*Blackmoor* llevará la individualización mucho más lejos.
+    *Blackmoor* llevará la individualización mucho más lejos.
 
 ## 9. El Wizard: magia convertida en procedimiento
 
@@ -848,13 +848,13 @@ Algunos testimonios han enfatizado dificultades de Arneson para ajustarse a los 
 
 Otros participantes de aquella época ofrecen una imagen más compleja de la cultura interna de TSR.
 
-**PRECAUCIÓN**
+!!! warning "PRECAUCIÓN"
 
-> No debemos reducir su salida a: "Arneson no cumplía *deadlines* y TSR lo despidió."
+    > No debemos reducir su salida a: "Arneson no cumplía *deadlines* y TSR lo despidió."
 
-La evidencia disponible apunta a una relación bastante más compleja.
+    La evidencia disponible apunta a una relación bastante más compleja.
 
-El asunto merece estudiarse mediante documentación específica si en el futuro queremos reconstruirlo con mayor precisión.
+    El asunto merece estudiarse mediante documentación específica si en el futuro queremos reconstruirlo con mayor precisión.
 
 ## 26. La transformación de TSR
 

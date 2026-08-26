@@ -1,5 +1,11 @@
 # **Bloodwych (1989) — RPG Archaeology**
 
+<figure markdown>
+![Bloodwych (1989) — RPG Archaeology](../assets/images/games/bloodwych/Bloodwych-mini.png)
+</figure>
+
+[▶ Ver episodio en YouTube](YOUTUBE_VIDEO_URL)
+
 **Ficha de arqueología de diseño, sistemas y herramientas**
 
 Objetivo: conservar una segunda fuente de información reutilizable para futuras decisiones de diseño y arquitectura en *Lands of Folklore* (LoF), especialmente en ámbitos de dungeon authoring, party, inventario, combate, magia, interacción sistémica, multiplayer y tooling.
@@ -72,12 +78,12 @@ Para esta ficha se usan tres niveles:
 
 ## **3.1. Los Autores: "La Trinidad de Trazere"**
 
-**CONFIRMED**  
-*Bloodwych* no fue producto de un gran estudio, sino el esfuerzo central de tres personas que operaban bajo fuertes restricciones técnicas y de memoria.
+!!! success "CONFIRMED"
+    *Bloodwych* no fue producto de un gran estudio, sino el esfuerzo central de tres personas que operaban bajo fuertes restricciones técnicas y de memoria.
 
-> * **Anthony "Tag" Taglione (Programación 16-bits y Diseño):** Motor técnico del juego. Escribió el motor en ensamblador 68000 para Amiga y Atari ST. Su motivación original era trasladar sus partidas de tablero de *Dungeons & Dragons* al ordenador para jugar con su compañero Pete James. Al ver *Dungeon Master*, decidieron que la única forma de superarlo era construir un motor que soportara dos instancias del mundo renderizándose simultáneamente.  
-> * **Pete James (Arte y Diseño de Niveles):** Amigo de universidad de Anthony. Responsable de la optimización visual extrema. Diseñó un set de *tiles* lo suficientemente modular y ligero como para que el motor pudiera dibujar dos vistas en primera persona sin colapsar la RAM de las máquinas de la época.  
-> * **Philip Taglione (Programación 8-bits):** Hermano menor de Anthony. Ante la exigencia de la editora (Mirrorsoft) de lanzar el juego en sistemas menores, reescribió y adaptó toda la lógica y arquitectura al ensamblador Z80 (ZX Spectrum, Amstrad CPC).
+    > * **Anthony "Tag" Taglione (Programación 16-bits y Diseño):** Motor técnico del juego. Escribió el motor en ensamblador 68000 para Amiga y Atari ST. Su motivación original era trasladar sus partidas de tablero de *Dungeons & Dragons* al ordenador para jugar con su compañero Pete James. Al ver *Dungeon Master*, decidieron que la única forma de superarlo era construir un motor que soportara dos instancias del mundo renderizándose simultáneamente.
+    > * **Pete James (Arte y Diseño de Niveles):** Amigo de universidad de Anthony. Responsable de la optimización visual extrema. Diseñó un set de *tiles* lo suficientemente modular y ligero como para que el motor pudiera dibujar dos vistas en primera persona sin colapsar la RAM de las máquinas de la época.
+    > * **Philip Taglione (Programación 8-bits):** Hermano menor de Anthony. Ante la exigencia de la editora (Mirrorsoft) de lanzar el juego en sistemas menores, reescribió y adaptó toda la lógica y arquitectura al ensamblador Z80 (ZX Spectrum, Amstrad CPC).
 
 ### **Lección conceptual**
 
@@ -85,9 +91,9 @@ La arquitectura de *Bloodwych* (datos ultra-comprimidos, tipos de celda discreto
 
 ## **3.2. Lección de Producción A: La pérdida de control del Runtime**
 
-**CONFIRMED**  
-El núcleo del equipo desarrolló internamente las versiones de Amiga, Atari ST, Spectrum, Amstrad y Commodore 64\. Sin embargo, la editora externalizó el *port* de MS-DOS (PC) a un estudio externo llamado Walking Circles.  
-El resultado fue un desastre técnico: la versión de PC se lanzó con *bugs* críticos que corrompían la partida, rompían los *switches* y hacían el juego literalmente imposible de terminar.
+!!! success "CONFIRMED"
+    El núcleo del equipo desarrolló internamente las versiones de Amiga, Atari ST, Spectrum, Amstrad y Commodore 64\. Sin embargo, la editora externalizó el *port* de MS-DOS (PC) a un estudio externo llamado Walking Circles.
+    El resultado fue un desastre técnico: la versión de PC se lanzó con *bugs* críticos que corrompían la partida, rompían los *switches* y hacían el juego literalmente imposible de terminar.
 
 ### **Principio extraído para LoF**
 
@@ -96,8 +102,8 @@ Si en el futuro LoF requiere *ports* o integraciones con sistemas externos (APIs
 
 ## **3.3. Lección de Producción B: Scope fluido pero verificado**
 
-**STRONG**  
-La portada del juego fue encargada al ilustrador Chris Achilleos con total libertad creativa. Achilleos entregó una pintura protagonizada por un enorme demonio de cristal. Al equipo le gustó tanto el arte que, en lugar de ignorarlo, volvieron al código y adaptaron el diseño final del juego para incluir a esa criatura exacta como el jefe final: *El Señor de la Entropía*.
+!!! tip "STRONG"
+    La portada del juego fue encargada al ilustrador Chris Achilleos con total libertad creativa. Achilleos entregó una pintura protagonizada por un enorme demonio de cristal. Al equipo le gustó tanto el arte que, en lugar de ignorarlo, volvieron al código y adaptaron el diseño final del juego para incluir a esa criatura exacta como el jefe final: *El Señor de la Entropía*.
 
 ### **Principio extraído para LoF**
 
@@ -108,33 +114,33 @@ Aunque la regla general en LoF sea *"No amplío el scope sin permiso"*, el dise�
 
 ## **4\. Recurso de mapa por torre**
 
-**CONFIRMED**  
-Cada torre de *Bloodwych* posee un recurso fijo de:
+!!! success "CONFIRMED"
+    Cada torre de *Bloodwych* posee un recurso fijo de:
 
-> * 0x1000 bytes por mapa de torre;  
-> * cabecera de 0x38 bytes;  
-> * hasta 8 plantas;  
-> * el resto (0xFC8) contiene las celdas.
+    > * 0x1000 bytes por mapa de torre;
+    > * cabecera de 0x38 bytes;
+    > * hasta 8 plantas;
+    > * el resto (0xFC8) contiene las celdas.
 
-Cada localización ocupa exactamente:
+    Cada localización ocupa exactamente:
 
-2 bytes
+    2 bytes
 
-La cabecera guarda, entre otras cosas:
+    La cabecera guarda, entre otras cosas:
 
-> * 8 anchuras;  
-> * 8 alturas;  
-> * 8 offsets de datos;  
-> * 8 offsets/alineamientos X;  
-> * 8 offsets/alineamientos Y;  
-> * información de planta especial;  
-> * número de planta superior.
+    > * 8 anchuras;
+    > * 8 alturas;
+    > * 8 offsets de datos;
+    > * 8 offsets/alineamientos X;
+    > * 8 offsets/alineamientos Y;
+    > * información de planta especial;
+    > * número de planta superior.
 
-Esto permite que distintas plantas:
+    Esto permite que distintas plantas:
 
-> * tengan dimensiones distintas;  
-> * estén desplazadas unas respecto a otras;  
-> * se relacionen verticalmente sin necesitar una representación 3D continua.
+    > * tengan dimensiones distintas;
+    > * estén desplazadas unas respecto a otras;
+    > * se relacionen verticalmente sin necesitar una representación 3D continua.
 
 ### **Lección**
 
@@ -149,35 +155,35 @@ y las conexiones verticales se resuelven mediante la relación entre grids.
 
 ## **5\. Anatomía de una celda**
 
-**CONFIRMED**  
-Los dos bytes de cada celda se exponen en el editor como cuatro nibbles:
+!!! success "CONFIRMED"
+    Los dos bytes de cada celda se exponen en el editor como cuatro nibbles:
 
-Byte 0  
-  A \= bits 7..4  
-  B \= bits 3..0
+    Byte 0
+      A \= bits 7..4
+      B \= bits 3..0
 
-Byte 1  
-  C \= bits 7..4  
-  D \= bits 3..0
+    Byte 1
+      C \= bits 7..4
+      D \= bits 3..0
 
-Los tres bits inferiores determinan:
+    Los tres bits inferiores determinan:
 
-map\_type \= second\_byte & 0x07
+    map\_type \= second\_byte & 0x07
 
-Por tanto hay exactamente **8 tipos fundamentales de celda**.  
-La semántica del resto de bits depende del tipo. Esto equivale a una variant/union extremadamente compacta.
+    Por tanto hay exactamente **8 tipos fundamentales de celda**.
+    La semántica del resto de bits depende del tipo. Esto equivale a una variant/union extremadamente compacta.
 
 # **PARTE II — LOS 8 TIPOS DE CELDA**
 
 ## **6\. Type 0 — Space**
 
-**CONFIRMED**  
-Representa espacio libre/transitable.  
-Default semántico:
+!!! success "CONFIRMED"
+    Representa espacio libre/transitable.
+    Default semántico:
 
-00 00
+    00 00
 
-Su función principal es establecer que una posición del dungeon puede existir sin contener ninguna estructura especial.
+    Su función principal es establecer que una posición del dungeon puede existir sin contener ninguna estructura especial.
 
 ### **Lectura conceptual**
 
@@ -185,37 +191,37 @@ EMPTY / WALKABLE SPACE
 
 ## **7\. Type 1 — Stone Wall \+ Feature**
 
-**CONFIRMED**  
-No representa únicamente un muro de piedra.  
-Puede almacenar:
+!!! success "CONFIRMED"
+    No representa únicamente un muro de piedra.
+    Puede almacenar:
 
-> * cara/orientación;  
-> * estado especial;  
-> * uno de varios tipos de wall feature.
+    > * cara/orientación;
+    > * estado especial;
+    > * uno de varios tipos de wall feature.
 
-Familias documentadas:
+    Familias documentadas:
 
-SHELF  
-SIGN  
-SWITCH  
-SOCKET
+    SHELF
+    SIGN
+    SWITCH
+    SOCKET
 
-Los switches pueden tener:
+    Los switches pueden tener:
 
-> * referencia;  
-> * estado visual (LIT / DIM).
+    > * referencia;
+    > * estado visual (LIT / DIM).
 
-Los sockets pueden tener:
+    Los sockets pueden tener:
 
-> * familia de gema;  
-> * estado FULL / EMPTY.
+    > * familia de gema;
+    > * estado FULL / EMPTY.
 
-Los signs pueden representar:
+    Los signs pueden representar:
 
-> * signos temáticos;  
-> * scrolls/referencias.
+    > * signos temáticos;
+    > * scrolls/referencias.
 
-También existe un estado de ocultación/conceal.
+    También existe un estado de ocultación/conceal.
 
 ### **Lectura conceptual**
 
@@ -233,28 +239,28 @@ Placed / Interactive Feature
 
 ## **8\. Type 2 — Wooden Structure**
 
-**CONFIRMED**  
-Una sola celda puede representar independientemente los cuatro lados:
+!!! success "CONFIRMED"
+    Una sola celda puede representar independientemente los cuatro lados:
 
-N  
-E  
-S  
-W
+    N
+    E
+    S
+    W
 
-Cada lado usa dos bits y admite:
+    Cada lado usa dos bits y admite:
 
-NONE  
-WALL  
-OPEN  
-CLOSED
+    NONE
+    WALL
+    OPEN
+    CLOSED
 
-Además puede existir un estado de lock.  
-Ejemplo conceptual:
+    Además puede existir un estado de lock.
+    Ejemplo conceptual:
 
-N \= WALL  
-E \= OPEN  
-S \= NONE  
-W \= CLOSED
+    N \= WALL
+    E \= OPEN
+    S \= NONE
+    W \= CLOSED
 
 ### **Lectura conceptual**
 
@@ -273,14 +279,14 @@ Bloodwych integra los edges en la celda por necesidad de compresión. LoF los ex
 
 ## **9\. Type 3 — Misc Solid**
 
-**CONFIRMED**  
-Agrupa al menos:
+!!! success "CONFIRMED"
+    Agrupa al menos:
 
-BED  
-PILLAR
+    BED
+    PILLAR
 
-Esta clasificación puede parecer extraña desde una ontología moderna, pero probablemente refleja una decisión funcional:  
-ambos son elementos especiales ocupando la celda y procesados de forma similar por el motor.
+    Esta clasificación puede parecer extraña desde una ontología moderna, pero probablemente refleja una decisión funcional:
+    ambos son elementos especiales ocupando la celda y procesados de forma similar por el motor.
 
 ### **Lección arqueológica**
 
@@ -289,13 +295,13 @@ Las categorías de datos históricas no siempre describen “qué es una cosa”
 
 ## **10\. Type 4 — Stairs**
 
-**CONFIRMED**  
-Codifica:
+!!! success "CONFIRMED"
+    Codifica:
 
-Elevation: UP / DOWN  
-Direction: N / E / S / W
+    Elevation: UP / DOWN
+    Direction: N / E / S / W
 
-No necesita almacenar necesariamente un destino completo en la propia celda. La relación vertical depende del layout/alineamiento de las plantas.
+    No necesita almacenar necesariamente un destino completo en la propia celda. La relación vertical depende del layout/alineamiento de las plantas.
 
 ### **Lectura conceptual**
 
@@ -303,26 +309,26 @@ VERTICAL CONNECTION
 
 ## **11\. Type 5 — Metal Door**
 
-**CONFIRMED**  
-La puerta metálica es categoría propia. Puede definir:
+!!! success "CONFIRMED"
+    La puerta metálica es categoría propia. Puede definir:
 
-REGULAR / PORTCULLIS  
-NORTH-SOUTH / EAST-WEST  
-OPEN / CLOSED  
-LOCK TYPE
+    REGULAR / PORTCULLIS
+    NORTH-SOUTH / EAST-WEST
+    OPEN / CLOSED
+    LOCK TYPE
 
-Familias de cerradura documentadas por el editor reconstruido:
+    Familias de cerradura documentadas por el editor reconstruido:
 
-UNLOCKED  
-MAGE  
-BRONZE  
-IRON  
-SERPENT  
-CHAOS  
-DRAGON  
-MOON  
-CHROMATIC  
-VOID
+    UNLOCKED
+    MAGE
+    BRONZE
+    IRON
+    SERPENT
+    CHAOS
+    DRAGON
+    MOON
+    CHROMATIC
+    VOID
 
 ### **Lección de diseño**
 
@@ -335,25 +341,25 @@ LoF: Door \= StructuralEdge(kind \= DOOR)
 
 ## **12\. Type 6 — Floor / Event Surface**
 
-**CONFIRMED**  
-Puede representar:
+!!! success "CONFIRMED"
+    Puede representar:
 
-FIZZLE  
-FLOOR HOLE  
-GREEN PAD  
-INVISIBLE PAD
+    FIZZLE
+    FLOOR HOLE
+    GREEN PAD
+    INVISIBLE PAD
 
-Y además, de forma independiente:
+    Y además, de forma independiente:
 
-CEILING HOLE  
-NO CEILING HOLE
+    CEILING HOLE
+    NO CEILING HOLE
 
-Los pads pueden contener una referencia a una tabla de triggers. Ejemplo:
+    Los pads pueden contener una referencia a una tabla de triggers. Ejemplo:
 
-Cell:  
-  invisible pad  
-  trigger\_ref \= 17  
-  ceiling\_hole \= true
+    Cell:
+      invisible pad
+      trigger\_ref \= 17
+      ceiling\_hole \= true
 
 ### **Lectura conceptual**
 
@@ -367,17 +373,17 @@ Es un ejemplo claro de mundo reactivo sin física continua. Una celda puede pose
 
 ## **13\. Type 7 — Magic Space**
 
-**CONFIRMED**  
-Estados documentados:
+!!! success "CONFIRMED"
+    Estados documentados:
 
-SPACE  
-FIREPATH  
-MINDROCK  
-FORMWALL
+    SPACE
+    FIREPATH
+    MINDROCK
+    FORMWALL
 
-Más:
+    Más:
 
-POWER \= 0..63
+    POWER \= 0..63
 
 ### **Lección de diseño**
 
@@ -412,42 +418,42 @@ No para crear enums gigantes, sino para detectar mezclas de responsabilidad.
 
 ## **15\. Estructura de un switch**
 
-**CONFIRMED**  
-Una celda Type 1 puede contener un switch. La celda no almacena directamente su comportamiento. Almacena una referencia a una definición compartida.
+!!! success "CONFIRMED"
+    Una celda Type 1 puede contener un switch. La celda no almacena directamente su comportamiento. Almacena una referencia a una definición compartida.
 
-STONE WALL CELL  
-      |  
-      \+-- SWITCH  
-             |  
-             \+-- reference  
-                    |  
-                    v  
-              SwitchRecord  
-              \------------  
-              action  
-              target X  
-              target Y
+    STONE WALL CELL
+          |
+          \+-- SWITCH
+                 |
+                 \+-- reference
+                        |
+                        v
+                  SwitchRecord
+                  \------------
+                  action
+                  target X
+                  target Y
 
-Cada torre dispone de:
+    Cada torre dispone de:
 
-16 switch definitions  
-4 bytes each
+    16 switch definitions
+    4 bytes each
 
 ## **16\. Acciones de switch**
 
-**CONFIRMED**  
-El editor reconstruido identifica estas acciones:
+!!! success "CONFIRMED"
+    El editor reconstruido identifica estas acciones:
 
-0x00  NO EFFECT  
-0x02  REMOVE  
-0x04  TOGGLE WALL  
-0x06  OPEN METAL DOOR  
-0x08  ROTATE WALL  
-0x0A  TOGGLE PILLAR  
-0x0C  PLACE PILLAR  
-0x0E  ROTATE WOODEN WALL
+    0x00  NO EFFECT
+    0x02  REMOVE
+    0x04  TOGGLE WALL
+    0x06  OPEN METAL DOOR
+    0x08  ROTATE WALL
+    0x0A  TOGGLE PILLAR
+    0x0C  PLACE PILLAR
+    0x0E  ROTATE WOODEN WALL
 
-No hay un lenguaje de scripting general. Hay un vocabulario reducido de **verbos conocidos sobre el mundo**.
+    No hay un lenguaje de scripting general. Hay un vocabulario reducido de **verbos conocidos sobre el mundo**.
 
 ## **17\. Modelo conceptual de interacción**
 
@@ -479,12 +485,12 @@ Antes de introducir scripting generalista: **comprobar cuánto dungeon puede con
 
 ## **19\. Reutilización de referencias**
 
-**CONFIRMED**  
-Varias celdas pueden compartir el mismo SwitchRecord.
+!!! success "CONFIRMED"
+    Varias celdas pueden compartir el mismo SwitchRecord.
 
-Switch A \--\\  
-Switch B \----\> SwitchRecord \#7  
-Switch C \--/
+    Switch A \--\\
+    Switch B \----\> SwitchRecord \#7
+    Switch C \--/
 
 ### **Lección para LoF**
 
@@ -494,21 +500,21 @@ Cuando un Inspector modifique un recurso compartido: **la UI debe comunicar que 
 
 ## **20\. Diferencia conceptual entre switch y trigger**
 
-**CONFIRMED**  
-Switch:
+!!! success "CONFIRMED"
+    Switch:
 
-action  
-x  
-y
+    action
+    x
+    y
 
-Trigger:
+    Trigger:
 
-action  
-floor  
-x  
-y
+    action
+    floor
+    x
+    y
 
-El switch funciona como mecanismo espacial relativamente local. El trigger es una herramienta de evento más general y puede afectar explícitamente a otra planta.
+    El switch funciona como mecanismo espacial relativamente local. El trigger es una herramienta de evento más general y puede afectar explícitamente a otra planta.
 
 ## **21\. Acciones conocidas de trigger**
 
@@ -532,8 +538,8 @@ PLAYER \-\> PARTY \-\> \[CHAMPION, CHAMPION, ...\]
 
 ## **23\. Subposiciones dentro de una celda**
 
-**CONFIRMED**  
-Existen cinco subposiciones: 0 near right, 1 near left, 2 rear left, 3 rear right, 4 centre
+!!! success "CONFIRMED"
+    Existen cinco subposiciones: 0 near right, 1 near left, 2 rear left, 3 rear right, 4 centre
 
 ### **Lección**
 
@@ -548,16 +554,16 @@ Separación clara de Level, Attributes, Resource Pools, Knowledge, Equipment, Po
 
 ## **25\. Inventario individual**
 
-**CONFIRMED**  
-Cada campeón mantiene inventario propio (12 slots visibles).
+!!! success "CONFIRMED"
+    Cada campeón mantiene inventario propio (12 slots visibles).
 
-Party control \= shared operational layer  
-Inventory \= individual ownership
+    Party control \= shared operational layer
+    Inventory \= individual ownership
 
 ## **26\. Stats derivados**
 
-**CONFIRMED**  
-La protección final combina valor base \+ equipo \+ estados \+ armour de manos \+ shield.
+!!! success "CONFIRMED"
+    La protección final combina valor base \+ equipo \+ estados \+ armour de manos \+ shield.
 
 ### **Lección para LoF**
 
@@ -567,21 +573,21 @@ Preferir, cuando tenga sentido, stats derivados de fuentes explícitas frente a 
 
 ## **27-30. Magia y Level-up**
 
-**CONFIRMED**  
-Los 32 hechizos se representan mediante flags individuales. El conocimiento se almacena por individuo. Existe además una matriz runtime separada de spell practice.  
-La contribución del level al casting varía según profesión. El mismo Level se interpreta mecánicamente de forma distinta dependiendo del personaje.
+!!! success "CONFIRMED"
+    Los 32 hechizos se representan mediante flags individuales. El conocimiento se almacena por individuo. Existe además una matriz runtime separada de spell practice.
+    La contribución del level al casting varía según profesión. El mismo Level se interpreta mecánicamente de forma distinta dependiendo del personaje.
 
 # **PARTE IX — COMUNICACIÓN Y AGENCIA**
 
 ## **31\. Comunicación en tiempo real**
 
-**STRONG**  
-Bloodwych integra comunicación, comercio e interacción dentro de la misma interfaz del juego (trade, threaten, bribe, praise, etc.). Es compacto y compatible con el tiempo real.
+!!! tip "STRONG"
+    Bloodwych integra comunicación, comercio e interacción dentro de la misma interfaz del juego (trade, threaten, bribe, praise, etc.). Es compacto y compatible con el tiempo real.
 
 ## **32\. Agencia de compañeros**
 
-**STRONG**  
-Las interacciones sociales influyen en la autonomía de los miembros. Un companion podría mantener un pequeño conjunto de tendencias (loyalty, confidence, aggression) como modificadores de microdecisiones.
+!!! tip "STRONG"
+    Las interacciones sociales influyen en la autonomía de los miembros. Un companion podría mantener un pequeño conjunto de tendencias (loyalty, confidence, aggression) como modificadores de microdecisiones.
 
 # **PARTE X — MULTIPLAYER**
 
@@ -598,8 +604,8 @@ La política razonable para LoF es single-player product, pero avoid gratuitous 
 
 ## **35\. No es sólo un editor de mapas**
 
-**CONFIRMED**  
-El editor AMOS comunitario llegó a manejar referencias y datos para torres, switches, monsters, stats, etc. Advertencia clásica de scope creep en tooling.
+!!! success "CONFIRMED"
+    El editor AMOS comunitario llegó a manejar referencias y datos para torres, switches, monsters, stats, etc. Advertencia clásica de scope creep en tooling.
 
 ## **36\. Modos del editor moderno**
 

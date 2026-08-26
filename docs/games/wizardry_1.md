@@ -1,5 +1,11 @@
 # Wizardry: Proving Grounds of the Mad Overlord — Autopsia de un dungeon
 
+<figure markdown>
+![Wizardry: Proving Grounds of the Mad Overlord — RPG Archaeology](../assets/images/games/wizardry/Diseccionando Wizardry I.png)
+</figure>
+
+[▶ Ver episodio en YouTube](YOUTUBE_VIDEO_URL)
+
 ## 1. El espécimen
 
 *Wizardry: Proving Grounds of the Mad Overlord* aparece a comienzos de los años ochenta como uno de los primeros grandes intentos de trasladar al microordenador doméstico una experiencia de RPG basada en party, exploración de mazmorras, combate, progresión y persistencia.

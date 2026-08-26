@@ -38,34 +38,34 @@ And especially:
 
 The story of *Chainmail* does not begin only with Gary Gygax.
 
-**DOCUMENTED FACT**
+!!! success "DOCUMENTED FACT"
 
-Jeff Perren, a member of the Lake Geneva wargamers community, had developed rules to represent medieval combats with miniatures.
+    Jeff Perren, a member of the Lake Geneva wargamers community, had developed rules to represent medieval combats with miniatures.
 
-Gygax took those rules as a starting point, expanded them considerably, and participated in their circulation within wargaming communities.
+    Gygax took those rules as a starting point, expanded them considerably, and participated in their circulation within wargaming communities.
 
-Early versions of these rules appeared before the commercial edition: a version titled *Geneva Medieval Miniatures* appeared in *Panzerfaust* in April 1970 and another version was published in *Domesday Book #5* in July of that year.
+    Early versions of these rules appeared before the commercial edition: a version titled *Geneva Medieval Miniatures* appeared in *Panzerfaust* in April 1970 and another version was published in *Domesday Book #5* in July of that year.
 
-Therefore:
+    Therefore:
 
-```text
-JEFF PERREN
-medieval rules
-     │
-     ▼
-PERREN + GYGAX
-expansion and development
-     │
-     ▼
-circulation in the hobby
-     │
-     ▼
-CHAINMAIL
-```
+    ```text
+    JEFF PERREN
+    medieval rules
+         │
+         ▼
+    PERREN + GYGAX
+    expansion and development
+         │
+         ▼
+    circulation in the hobby
+         │
+         ▼
+    CHAINMAIL
+    ```
 
-This is important for RPG Archaeology.
+    This is important for RPG Archaeology.
 
-If we want to avoid building a history based solely on great names, Perren must retain his place in the genealogy.
+    If we want to avoid building a history based solely on great names, Perren must retain his place in the genealogy.
 
 ## 3. The Castle & Crusade Society
 
@@ -98,75 +98,75 @@ Lowry was preparing a collection of rulesets called *Wargaming with Miniatures* 
 
 The first title published within that collection was precisely *Chainmail*.
 
-**DOCUMENTED FACT**
+!!! success "DOCUMENTED FACT"
 
-The first commercial edition appeared in 1971, credited to:
+    The first commercial edition appeared in 1971, credited to:
 
-Gary Gygax & Jeff Perren
+    Gary Gygax & Jeff Perren
 
-and published by Guidon Games.
+    and published by Guidon Games.
 
-The edition had approximately sixty pages and contained something that would end up being much more historically important than its size suggested:
+    The edition had approximately sixty pages and contained something that would end up being much more historically important than its size suggested:
 
-*Fantasy Supplement*
+    *Fantasy Supplement*
 
-The first edition dedicated about fifteen pages to these fantasy rules.
+    The first edition dedicated about fifteen pages to these fantasy rules.
 
 ## 5. What Chainmail really was
 
 It is important not to retrospectively reinterpret *Chainmail* as a proto-RPG.
 
-**DOCUMENTED FACT**
+!!! success "DOCUMENTED FACT"
 
-*Chainmail* was fundamentally a medieval miniatures wargame.
+    *Chainmail* was fundamentally a medieval miniatures wargame.
 
-Its main objective was to provide procedures for representing medieval military battles on a table.
+    Its main objective was to provide procedures for representing medieval military battles on a table.
 
-It included different scales and procedures related to:
+    It included different scales and procedures related to:
 
-- troops;
-- movement;
-- combat;
-- armor;
-- weapons;
-- morale;
-- formations;
-- terrain;
-- sieges;
-- individual combat;
-- tournaments.
+    - troops;
+    - movement;
+    - combat;
+    - armor;
+    - weapons;
+    - morale;
+    - formations;
+    - terrain;
+    - sieges;
+    - individual combat;
+    - tournaments.
 
-Representation continued to belong to the wargaming paradigm:
+    Representation continued to belong to the wargaming paradigm:
 
-```text
-MINIATURES
-     +
-TERRAIN
-     +
-DISTANCES
-     +
-TROOP TYPES
-     +
-RULES
-     ↓
-SIMULATED BATTLE
-```
+    ```text
+    MINIATURES
+         +
+    TERRAIN
+         +
+    DISTANCES
+         +
+    TROOP TYPES
+         +
+    RULES
+         ↓
+    SIMULATED BATTLE
+    ```
 
-The player continued to control primarily military forces.
+    The player continued to control primarily military forces.
 
-We were not yet at:
+    We were not yet at:
 
-```text
-CHARACTER
-    ↓
-PERSISTENT WORLD
-    ↓
-EXPLORATION
-    ↓
-ADVENTURE
-```
+    ```text
+    CHARACTER
+        ↓
+    PERSISTENT WORLD
+        ↓
+    EXPLORATION
+        ↓
+    ADVENTURE
+    ```
 
-That jump belongs to another part of our genealogy.
+    That jump belongs to another part of our genealogy.
 
 ## 6. Different scales of combat
 
@@ -186,19 +186,19 @@ INDIVIDUAL COMBATANT
 
 But we must avoid drawing conclusions too quickly.
 
-**NOT DEMONSTRATED**
+!!! failure "NOT DEMONSTRATED"
 
-> Individual-scale combat does not automatically turn the combatant into an RPG character.
+    > Individual-scale combat does not automatically turn the combatant into an RPG character.
 
-There can exist:
+    There can exist:
 
-tactical individualization
+    tactical individualization
 
-without existing yet:
+    without existing yet:
 
-persistent character identity.
+    persistent character identity.
 
-This will be a fundamental difference when we compare *Chainmail* with *Blackmoor*.
+    This will be a fundamental difference when we compare *Chainmail* with *Blackmoor*.
 
 ## 7. The Fantasy Supplement
 
@@ -262,15 +262,15 @@ We now have individual figures with capabilities far superior to common units.
 
 However:
 
-**CAUTION**
+!!! warning "CAUTION"
 
-> We should not automatically project over these *Heroes* the later concept of a *D&D* character.
+    > We should not automatically project over these *Heroes* the later concept of a *D&D* character.
 
-They still belong to the context of a miniature battle.
+    They still belong to the context of a miniature battle.
 
-What is interesting archaeologically is to observe how wargaming began to dispose of vocabulary to represent extraordinary individuals.
+    What is interesting archaeologically is to observe how wargaming began to dispose of vocabulary to represent extraordinary individuals.
 
-*Blackmoor* will take individualization much further.
+    *Blackmoor* will take individualization much further.
 
 ## 9. The Wizard: magic converted into procedure
 
@@ -848,13 +848,13 @@ Some testimonies have emphasized Arneson's difficulties adapting to editorial de
 
 Other participants from that time offer a more complex image of TSR's internal culture.
 
-**CAUTION**
+!!! warning "CAUTION"
 
-> We should not reduce his departure to: "Arneson didn't meet *deadlines* and TSR fired him."
+    > We should not reduce his departure to: "Arneson didn't meet *deadlines* and TSR fired him."
 
-The available evidence points to a much more complex relationship.
+    The available evidence points to a much more complex relationship.
 
-The matter deserves to be studied through specific documentation if we want to reconstruct it with greater precision in the future.
+    The matter deserves to be studied through specific documentation if we want to reconstruct it with greater precision in the future.
 
 ## 26. The transformation of TSR
 

@@ -7,6 +7,12 @@
 
 ---
 
+<figure markdown>
+![The Dark Heart of Uukrul — Informe técnico — RPG Archaeology](../assets/images/games/uukrul/Uukrul_RPG_Archaeology_YouTube_Thumbnail.png)
+</figure>
+
+[▶ Ver episodio en YouTube](YOUTUBE_VIDEO_URL)
+
 ## 1. Resumen ejecutivo
 
 La investigación empezó con una pregunta relativamente modesta: **¿podemos reconstruir los mapas de Eriosthé a partir de los datos originales de The Dark Heart of Uukrul?**

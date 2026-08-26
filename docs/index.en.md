@@ -142,6 +142,8 @@ Documentation is maintained in Markdown and viewed through MkDocs.
 
 The immediate goal is not to publish or build a large database, but rather to create a small, readable, and well-connected corpus.
 
+[▶ RPG Archaeology on YouTube](https://www.youtube.com/playlist?list=PLSfHhJ-i_zDM)
+
 ## Influences
 
 - [Influences](influences.md)

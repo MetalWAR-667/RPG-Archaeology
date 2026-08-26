@@ -321,14 +321,17 @@ las comunidades de aficionados.
 
 Por tanto:
 
-**HECHO DOCUMENTADO:** Estados Unidos adoptó y adaptó el *Kriegsspiel*
-europeo dentro de contextos militares durante el siglo XIX.
+!!! success "HECHO DOCUMENTADO"
+    Estados Unidos adoptó y adaptó el *Kriegsspiel*
+    europeo dentro de contextos militares durante el siglo XIX.
 
-**HECHO DOCUMENTADO:** durante el siglo XX se desarrolló en Estados Unidos una
-importante cultura civil y comercial de wargaming.
+!!! success "HECHO DOCUMENTADO"
+    durante el siglo XX se desarrolló en Estados Unidos una
+    importante cultura civil y comercial de wargaming.
 
-**NO SE ASUME:** que exista una cadena institucional directa e ininterrumpida
-entre Totten o Livermore y los diseñadores que posteriormente crearían el RPG.
+!!! warning "NO SE ASUME"
+    que exista una cadena institucional directa e ininterrumpida
+    entre Totten o Livermore y los diseñadores que posteriormente crearían el RPG.
 
 Son estratos relacionados de una historia mayor, pero la relación concreta
 entre ellos debe demostrarse cuando exista evidencia.

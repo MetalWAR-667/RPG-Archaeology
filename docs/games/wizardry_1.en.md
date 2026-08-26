@@ -1,5 +1,11 @@
 # Wizardry: Proving Grounds of the Mad Overlord — Autopsy of a Dungeon
 
+<figure markdown>
+![Wizardry: Proving Grounds of the Mad Overlord — RPG Archaeology](../assets/images/games/wizardry/Diseccionando Wizardry I.png)
+</figure>
+
+[▶ Watch the episode on YouTube](YOUTUBE_VIDEO_URL)
+
 ## 1. The Specimen
 
 *Wizardry: Proving Grounds of the Mad Overlord* appears in the early 1980s as one of the first serious attempts to bring a party-based RPG experience—exploration, combat, progression, and persistence—to the domestic microcomputer.

@@ -22,31 +22,31 @@ The hypothesis that has emerged is that we are projecting onto those maps a mode
 
 ## 2. Context: Blackmoor did not appear as a finished RPG
 
-**DOCUMENTED FACT**
+!!! success "DOCUMENTED FACT"
 
->*Blackmoor* emerged within the Twin Cities wargaming community and the experimental environment generated around David Wesley's *Braunstein*.
+    >*Blackmoor* emerged within the Twin Cities wargaming community and the experimental environment generated around David Wesley's *Braunstein*.
 
-*Braunstein* had introduced fundamental elements:
+    *Braunstein* had introduced fundamental elements:
 
-- participants controlling individual characters;
-- different objectives for each participant;
-- incomplete information;
-- actions not necessarily anticipated by the rules;
-- a referee in charge of adjudicating their consequences.
+    - participants controlling individual characters;
+    - different objectives for each participant;
+    - incomplete information;
+    - actions not necessarily anticipated by the rules;
+    - a referee in charge of adjudicating their consequences.
 
-Arneson participated in this environment.
+    Arneson participated in this environment.
 
-There is also contemporary documentation from April 1971 announcing Arneson's "medieval *Braunstein*", an immediate antecedent of *Blackmoor*.
+    There is also contemporary documentation from April 1971 announcing Arneson's "medieval *Braunstein*", an immediate antecedent of *Blackmoor*.
 
-The exact chronology of the first sessions remains under investigation.
+    The exact chronology of the first sessions remains under investigation.
 
-Some sources and reconstructions place campaign antecedents as early as 1970, while during 1971 we find clearer evidence of *Blackmoor*'s development.
+    Some sources and reconstructions place campaign antecedents as early as 1970, while during 1971 we find clearer evidence of *Blackmoor*'s development.
 
-**CONCLUSION**
+!!! abstract "CONCLUSION"
 
->*Blackmoor* does not seem to have appeared through prior writing of a new ruleset.
+    >*Blackmoor* does not seem to have appeared through prior writing of a new ruleset.
 
->It seems to have evolved through play.
+    >It seems to have evolved through play.
 
 ## 3. A campaign that generated its own rules
 
@@ -115,9 +115,11 @@ This provides a plausible connection between *Civil War Ironclads* and certain a
 
 ### Evidence status
 
-**DOCUMENTED:** Arneson declared this influence.
+!!! success "DOCUMENTED"
+    Arneson declared this influence.
 
-**NOT YET DEMONSTRATED:** the exact mathematical genealogy between the rules of *Ironclads*, the early rules of *Blackmoor*, and the later ones of *D&D*.
+!!! failure "NOT YET DEMONSTRATED"
+    the exact mathematical genealogy between the rules of *Ironclads*, the early rules of *Blackmoor*, and the later ones of *D&D*.
 
 Therefore, it should not be written:
 
@@ -227,13 +229,13 @@ Intersections do not need to occur at square centers.
 
 Rooms do not need to correspond to orthogonal cell sets.
 
-**OBSERVABLE BEHAVIOR**
+!!! example "OBSERVABLE BEHAVIOR"
 
->In these maps: Grid ≠ discretized geometry.
+    >In these maps: Grid ≠ discretized geometry.
 
-The grid constitutes a metric support on which geometry of greater freedom is represented.
+    The grid constitutes a metric support on which geometry of greater freedom is represented.
 
-This still does not demonstrate how movement worked during sessions.
+    This still does not demonstrate how movement worked during sessions.
 
 ## 8. The discovery of David Megarry's maps
 
@@ -316,27 +318,27 @@ Annotations also allow reconstructing approximately a scale of:
 
 Our initial hypothesis can therefore be refined.
 
-**DOCUMENTED FACT**
+!!! success "DOCUMENTED FACT"
 
->Players used graph paper to map.
+    >Players used graph paper to map.
 
->Arneson communicated space through distances, dimensions, and spatial relationships.
+    >Arneson communicated space through distances, dimensions, and spatial relationships.
 
->Maps used a scale.
+    >Maps used a scale.
 
-**OBSERVABLE BEHAVIOR**
+!!! example "OBSERVABLE BEHAVIOR"
 
->The geometry freely crosses grid units.
+    >The geometry freely crosses grid units.
 
-**STRONG INFERENCE**
+!!! tip "STRONG INFERENCE"
 
->The grid seems to have functioned mainly as a metric/cartographic instrument, not as an obligatory definition of spatial topology.
+    >The grid seems to have functioned mainly as a metric/cartographic instrument, not as an obligatory definition of spatial topology.
 
-**NOT DEMONSTRATED**
+!!! failure "NOT DEMONSTRATED"
 
->We still don't have enough evidence to know whether certain movement, time, or encounter procedures also used the grid units.
+    >We still don't have enough evidence to know whether certain movement, time, or encounter procedures also used the grid units.
 
-This remains an open question.
+    This remains an open question.
 
 ## 11. Diagonals were probably not a special category
 
@@ -380,28 +382,28 @@ There isn't necessarily any special "diagonal movement" problem.
 
 Here we must carefully distinguish observation and intention.
 
-**OBSERVABLE BEHAVIOR**
+!!! example "OBSERVABLE BEHAVIOR"
 
-Diagonals make manual cartography considerably more difficult.
+    Diagonals make manual cartography considerably more difficult.
 
-Modern experiences playing with *Blackmoor* maps have shown players:
+    Modern experiences playing with *Blackmoor* maps have shown players:
 
-- losing orientation;
-- misinterpreting intersections;
-- incorrectly closing loops;
-- believing they visit new spaces when they are returning to known places.
+    - losing orientation;
+    - misinterpreting intersections;
+    - incorrectly closing loops;
+    - believing they visit new spaces when they are returning to known places.
 
-Oblique geometry is therefore objectively capable of producing disorientation.
+    Oblique geometry is therefore objectively capable of producing disorientation.
 
-**NOT DEMONSTRATED**
+!!! failure "NOT DEMONSTRATED"
 
->We still don't have sufficient evidence to state:
+    >We still don't have sufficient evidence to state:
 
-> "Arneson deliberately used diagonals to disorient players."
+    > "Arneson deliberately used diagonals to disorient players."
 
-It is perfectly possible.
+    It is perfectly possible.
 
-But there is a simpler alternative explanation.
+    But there is a simpler alternative explanation.
 
 ## 13. Cartographic hypothesis
 

@@ -15,110 +15,116 @@
 
 ------------------------------------------------------------------------
 
+<figure markdown>
+![Unlimited Adventures / Dungeon Craft — RPG Archaeology](../assets/images/games/frua/frua.png)
+</figure>
+
+[▶ Watch the episode on YouTube](YOUTUBE_VIDEO_URL)
+
 ## 0. The human factor, production and community
 
 ### 0.1. The studio and developers: MicroMagic and SSI
 
-CONFIRMED
+!!! success "CONFIRMED"
 
-Unlike much of the core Gold Box titles developed directly under SSI, Forgotten Realms: Unlimited Adventures was developed by MicroMagic and published by Strategic Simulations, Inc. (SSI).
+    Unlike much of the core Gold Box titles developed directly under SSI, Forgotten Realms: Unlimited Adventures was developed by MicroMagic and published by Strategic Simulations, Inc. (SSI).
 
-The credits identify a relatively small core behind the transformation of Gold Box technology into an adventure creation tool:
+    The credits identify a relatively small core behind the transformation of Gold Box technology into an adventure creation tool:
 
-Jason T. Linhart — Lead Design, direction and programming. Central figure in FRUA's design and a member of the programming team responsible for converting Gold Box engine capabilities into an authoring tool usable by non-programmer players and designers.
-David Blake and Bill Sloan — Programming. They formed part of the project's technical core; Sloan is also linked to design and documentation tasks.
-Eric Halloran and Herb Perez — Graphics / Artwork, with Carol Tanguay credited for additional art. The artistic work had to adapt the visual language inherited from Gold Box games to an environment where walls, backgrounds, portraits, sprites and other elements could be used as building pieces.
-David Govett and George “The Fat Man” Sanger — Music, continuing the usual collaboration around the sound technology used by SSI.
-John W. Ratcliff — IBM Digital Sound Driver, specifically credited for this part of the sound infrastructure.
-Clyde Caldwell — Cover art. One of the most recognizable TSR illustrators and responsible for giving FRUA an immediately AD&D-associable commercial identity.
+    Jason T. Linhart — Lead Design, direction and programming. Central figure in FRUA's design and a member of the programming team responsible for converting Gold Box engine capabilities into an authoring tool usable by non-programmer players and designers.
+    David Blake and Bill Sloan — Programming. They formed part of the project's technical core; Sloan is also linked to design and documentation tasks.
+    Eric Halloran and Herb Perez — Graphics / Artwork, with Carol Tanguay credited for additional art. The artistic work had to adapt the visual language inherited from Gold Box games to an environment where walls, backgrounds, portraits, sprites and other elements could be used as building pieces.
+    David Govett and George “The Fat Man” Sanger — Music, continuing the usual collaboration around the sound technology used by SSI.
+    John W. Ratcliff — IBM Digital Sound Driver, specifically credited for this part of the sound infrastructure.
+    Clyde Caldwell — Cover art. One of the most recognizable TSR illustrators and responsible for giving FRUA an immediately AD&D-associable commercial identity.
 
 ### Archaeological reading
 
-**ARCHAEOLOGICAL READING**
+!!! abstract "ARCHAEOLOGICAL READING"
 
-What is interesting is not only who programmed FRUA, but the type of work this team had to do.
+    What is interesting is not only who programmed FRUA, but the type of work this team had to do.
 
-Previous Gold Box games had been built as closed products: their designers worked with tools and internal structures intended to produce one specific game.
+    Previous Gold Box games had been built as closed products: their designers worked with tools and internal structures intended to produce one specific game.
 
-FRUA required inverting that relationship.
+    FRUA required inverting that relationship.
 
-``` text
-BEFORE
+    ``` text
+    BEFORE
 
-Internal tools
-        ↓
-SSI designers
-        ↓
-Gold Box Game
-        ↓
-Player
-```
+    Internal tools
+            ↓
+    SSI designers
+            ↓
+    Gold Box Game
+            ↓
+    Player
+    ```
 
-``` text
-FRUA
+    ``` text
+    FRUA
 
-Tools turned into product
-        ↓
-Player / Author
-        ↓
-Adventure Design
-        ↓
-Another player
-```
+    Tools turned into product
+            ↓
+    Player / Author
+            ↓
+    Adventure Design
+            ↓
+    Another player
+    ```
 
-The problem was no longer simply making the engine run an adventure.
+    The problem was no longer simply making the engine run an adventure.
 
-It required that someone outside the team could describe that adventure without needing to understand how the engine worked.
+    It required that someone outside the team could describe that adventure without needing to understand how the engine worked.
 
-That is precisely the authoring problem that makes FRUA especially relevant to RPG Archaeology.
+    That is precisely the authoring problem that makes FRUA especially relevant to RPG Archaeology.
 
 ### 0.2. Production context: the swan song of the Gold Box era
 
-CONFIRMED / STRONG
+!!! success "CONFIRMED / STRONG"
 
-FRUA appeared in 1993, when Gold Box technology was already at the end of a long commercial trajectory that began with Pool of Radiance in 1988.
+    FRUA appeared in 1993, when Gold Box technology was already at the end of a long commercial trajectory that began with Pool of Radiance in 1988.
 
-Meanwhile, the CRPG was undergoing a rapid technical and visual transformation. Games like Eye of the Beholder and Ultima Underworld had shown very different ways to represent and explore three-dimensional worlds, and Gold Box technology was inevitably beginning to show its age.
+    Meanwhile, the CRPG was undergoing a rapid technical and visual transformation. Games like Eye of the Beholder and Ultima Underworld had shown very different ways to represent and explore three-dimensional worlds, and Gold Box technology was inevitably beginning to show its age.
 
-FRUA took much of that technological and content heritage and converted it into a construction set for AD&D adventures.
+    FRUA took much of that technological and content heritage and converted it into a construction set for AD&D adventures.
 
-The product also included a complete example adventure, The Heirs to Skull Crag, which served both as playable content and as a practical demonstration of what could be built with the tools.
+    The product also included a complete example adventure, The Heirs to Skull Crag, which served both as playable content and as a practical demonstration of what could be built with the tools.
 
 ### Archaeological reading
 
-**ARCHAEOLOGICAL READING**
+!!! abstract "ARCHAEOLOGICAL READING"
 
-It is tempting to interpret FRUA simply as the last commercial exploitation of an aging technology.
+    It is tempting to interpret FRUA simply as the last commercial exploitation of an aging technology.
 
-But from the tools perspective there is a much more interesting reading:
+    But from the tools perspective there is a much more interesting reading:
 
-A mature runtime can acquire a second life when its capabilities stop being used solely to produce internal content and become a creation language for third parties.
+    A mature runtime can acquire a second life when its capabilities stop being used solely to produce internal content and become a creation language for third parties.
 
-The change can be represented as:
+    The change can be represented as:
 
-``` text
-ENGINE
-  ↓
-GAME
-  ↓
-END OF PRODUCT LIFE
+    ``` text
+    ENGINE
+      ↓
+    GAME
+      ↓
+    END OF PRODUCT LIFE
 
-versus:
+    versus:
 
-ENGINE
-  ↓
-AUTHORING TOOL
-  ↓
-USER CONTENT
-  ↓
-NEW USER CONTENT
-  ↓
-NEW USER CONTENT
-  ↓
-...
-```
+    ENGINE
+      ↓
+    AUTHORING TOOL
+      ↓
+    USER CONTENT
+      ↓
+    NEW USER CONTENT
+      ↓
+    NEW USER CONTENT
+      ↓
+    ...
+    ```
 
-Technology stops producing only products and begins producing content producers.
+    Technology stops producing only products and begins producing content producers.
 
 ### Production lesson for LoF
 
@@ -134,253 +140,253 @@ The more stable and understandable the contract between Authoring and Runtime, t
 
 ### 0.3. The community ecosystem: from designs to hacks
 
-CONFIRMED / STRONG
+!!! success "CONFIRMED / STRONG"
 
-FRUA's longevity depended much less on SSI's official support than on the community that formed around the tool.
+    FRUA's longevity depended much less on SSI's official support than on the community that formed around the tool.
 
-Designs circulated through the online services and communities available at the time and later, around files, webs and specialized forums such as The Magic Mirror, UA File Archive and the communities that eventually converged around Gold Box Games.
+    Designs circulated through the online services and communities available at the time and later, around files, webs and specialized forums such as The Magic Mirror, UA File Archive and the communities that eventually converged around Gold Box Games.
 
-The community did not limit itself to creating adventures.
+    The community did not limit itself to creating adventures.
 
-It also began to discover the technical and editorial limits of the system.
+    It also began to discover the technical and editorial limits of the system.
 
 ### Ray Dyer and The Realm
 
-CONFIRMED / STRONG
+!!! success "CONFIRMED / STRONG"
 
-One of the most ambitious examples of FRUA's potential was the work of Ray Dyer, responsible for The Realm.
+    One of the most ambitious examples of FRUA's potential was the work of Ray Dyer, responsible for The Realm.
 
-Dyer produced a huge collection of designs based on classic Dungeons & Dragons modules, building around forty related adventures and an environment that allowed browsing and selecting different modules.
+    Dyer produced a huge collection of designs based on classic Dungeons & Dragons modules, building around forty related adventures and an environment that allowed browsing and selecting different modules.
 
-From our analysis it is especially interesting because The Realm attacked precisely one of the conceptual limitations we have identified in FRUA.
+    From our analysis it is especially interesting because The Realm attacked precisely one of the conceptual limitations we have identified in FRUA.
 
-The product understood well:
+    The product understood well:
 
-``` text
-MODULE
-    ↓
-ADVENTURE DESIGN
-```
+    ``` text
+    MODULE
+        ↓
+    ADVENTURE DESIGN
+    ```
 
-but provided a much less powerful abstraction above multiple Adventures.
+    but provided a much less powerful abstraction above multiple Adventures.
 
-The community ended up approximating something like:
+    The community ended up approximating something like:
 
-``` text
-THE REALM
-    │
-    ├── Adventure
-    ├── Adventure
-    ├── Adventure
-    ├── Adventure
-    └── ...
-```
+    ``` text
+    THE REALM
+        │
+        ├── Adventure
+        ├── Adventure
+        ├── Adventure
+        ├── Adventure
+        └── ...
+    ```
 
-That is:
+    That is:
 
-users began to build, through conventions and content, a Campaign layer that the tool did not formally provide with the same richness.
+    users began to build, through conventions and content, a Campaign layer that the tool did not formally provide with the same richness.
 
-This is a recurrent pattern in authoring tools:
+    This is a recurrent pattern in authoring tools:
 
-when many users repeatedly build the same abstraction above the tool, there may be an absent editorial concept below.
+    when many users repeatedly build the same abstraction above the tool, there may be an absent editorial concept below.
 
 ### 0.4. When authors crossed the Runtime Boundary
 
-CONFIRMED
+!!! success "CONFIRMED"
 
-FRUA allowed modifying a large amount of content, but kept other parts of the game enclosed within the structures and constants of the executable.
+    FRUA allowed modifying a large amount of content, but kept other parts of the game enclosed within the structures and constants of the executable.
 
-When the community wanted to modify what SSI had not considered part of the authoring language, reverse engineering began.
+    When the community wanted to modify what SSI had not considered part of the authoring language, reverse engineering began.
 
-Tools and techniques appeared around:
+    Tools and techniques appeared around:
 
-CKIT.EXE;
-executable patches;
-worldhacks;
-internal table modification;
-alterations of classes, races, objects and rules;
-graphical modifications beyond the originally intended limits.
+    CKIT.EXE;
+    executable patches;
+    worldhacks;
+    internal table modification;
+    alterations of classes, races, objects and rules;
+    graphical modifications beyond the originally intended limits.
 
-A particularly important piece of this ecosystem was UAShell.
+    A particularly important piece of this ecosystem was UAShell.
 
-Instead of necessarily distributing fully modified executables, hacked designs could use files like DIFF.TBL, which described differences to be applied to the local copy of CKIT.EXE.
+    Instead of necessarily distributing fully modified executables, hacked designs could use files like DIFF.TBL, which described differences to be applied to the local copy of CKIT.EXE.
 
-Conceptually:
+    Conceptually:
 
-``` text
-ORIGINAL CKIT.EXE
-       +
-    DIFF.TBL
-       ↓
-MODIFIED LOCAL RUNTIME
-```
+    ``` text
+    ORIGINAL CKIT.EXE
+           +
+        DIFF.TBL
+           ↓
+    MODIFIED LOCAL RUNTIME
+    ```
 
-This allowed the community to extend FRUA much beyond the capabilities envisioned by SSI.
+    This allowed the community to extend FRUA much beyond the capabilities envisioned by SSI.
 
-But it had a cost.
+    But it had a cost.
 
-``` text
-FRUA
- ↓
-simple authoring model
- ↓
-hard limits
- ↓
-community hacks
- ↓
-greater freedom
- ↓
-external tools
- ↓
-patches
- ↓
-compatibility requirements
- ↓
-greater technical complexity
-```
+    ``` text
+    FRUA
+     ↓
+    simple authoring model
+     ↓
+    hard limits
+     ↓
+    community hacks
+     ↓
+    greater freedom
+     ↓
+    external tools
+     ↓
+    patches
+     ↓
+    compatibility requirements
+     ↓
+    greater technical complexity
+    ```
 
-The community regained extensibility, but part of the original simplicity inevitably began to disappear.
+    The community regained extensibility, but part of the original simplicity inevitably began to disappear.
 
 ### 0.5. From UA2000 to UA Forever and Dungeon Craft
 
-CONFIRMED / STRONG
+!!! success "CONFIRMED / STRONG"
 
-At the end of the nineties, a much more ambitious attempt to solve the problem appeared: to rebuild the idea of Unlimited Adventures on a modern platform instead of indefinitely extending the original DOS executable.
+    At the end of the nineties, a much more ambitious attempt to solve the problem appeared: to rebuild the idea of Unlimited Adventures on a modern platform instead of indefinitely extending the original DOS executable.
 
-The early history of the project records:
+    The early history of the project records:
 
-``` text
-1999
-  ↓
-UA2000
-  ↓
-UA Forever
-  ↓
-UAF
-  ↓
-Dungeon Craft
-```
+    ``` text
+    1999
+      ↓
+    UA2000
+      ↓
+    UA Forever
+      ↓
+    UAF
+      ↓
+    Dungeon Craft
+    ```
 
-The project was already documented in August 1999 and shortly after adopted the name UA Forever. Sources from that early stage identify Robert Turner among the figures of the project.
+    The project was already documented in August 1999 and shortly after adopted the name UA Forever. Sources from that early stage identify Robert Turner among the figures of the project.
 
-Over time, UA Forever evolved toward Dungeon Craft, maintained and expanded by different community members for many years.
+    Over time, UA Forever evolved toward Dungeon Craft, maintained and expanded by different community members for many years.
 
-Later developers and collaborators —including names strongly associated with the modern history of the project like CocoaSpud and Manikus— continued to expand its capabilities.
+    Later developers and collaborators —including names strongly associated with the modern history of the project like CocoaSpud and Manikus— continued to expand its capabilities.
 
-The objective stopped being simply hacking FRUA.
+    The objective stopped being simply hacking FRUA.
 
-It became:
+    It became:
 
-recreate and extend the concept of Unlimited Adventures without being limited by the closed structures and technical restrictions of the original executable.
+    recreate and extend the concept of Unlimited Adventures without being limited by the closed structures and technical restrictions of the original executable.
 
-Dungeon Craft would end up allowing much higher levels of customization in areas such as:
+    Dungeon Craft would end up allowing much higher levels of customization in areas such as:
 
-``` text
-classes
-races
-items
-monsters
-spells
-special abilities
-databases
-scripting
-art
-```
+    ``` text
+    classes
+    races
+    items
+    monsters
+    spells
+    special abilities
+    databases
+    scripting
+    art
+    ```
 
-But, as we have seen in the rest of this sheet, that freedom also considerably increased the conceptual surface that a designer had to understand.
+    But, as we have seen in the rest of this sheet, that freedom also considerably increased the conceptual surface that a designer had to understand.
 
 ### 0.6. The full cycle
 
-**ARCHAEOLOGICAL SYNTHESIS**
+!!! abstract "ARCHAEOLOGICAL SYNTHESIS"
 
-The human history of FRUA can be summarized through an extraordinarily useful cycle:
+    The human history of FRUA can be summarized through an extraordinarily useful cycle:
 
-``` text
-SSI / MICROMAGIC
-create a limited authoring language
-            │
-            ▼
-USERS
-learn that language
-            │
-            ▼
-CREATE CONTENT
-            │
-            ▼
-DISCOVER ITS LIMITS
-            │
-            ▼
-WANT TO EXPRESS MORE
-            │
-            ▼
-HACKS / UASHELL / REVERSE ENGINEERING
-            │
-            ▼
-GREATER FREEDOM
-            │
-            ▼
-GREATER COMPLEXITY
-            │
-            ▼
-UA FOREVER / DUNGEON CRAFT
-            │
-            ▼
-NEW AUTHORING MODEL
-with a much more open boundary
-```
+    ``` text
+    SSI / MICROMAGIC
+    create a limited authoring language
+                │
+                ▼
+    USERS
+    learn that language
+                │
+                ▼
+    CREATE CONTENT
+                │
+                ▼
+    DISCOVER ITS LIMITS
+                │
+                ▼
+    WANT TO EXPRESS MORE
+                │
+                ▼
+    HACKS / UASHELL / REVERSE ENGINEERING
+                │
+                ▼
+    GREATER FREEDOM
+                │
+                ▼
+    GREATER COMPLEXITY
+                │
+                ▼
+    UA FOREVER / DUNGEON CRAFT
+                │
+                ▼
+    NEW AUTHORING MODEL
+    with a much more open boundary
+    ```
 
-It is not simply the story of a game that survived thanks to its fans.
+    It is not simply the story of a game that survived thanks to its fans.
 
-It is also the story of decades-long negotiation about where the boundary between the creator of a tool and the creator of content should be placed.
+    It is also the story of decades-long negotiation about where the boundary between the creator of a tool and the creator of content should be placed.
 
 ### 0.7. Principle extracted for LoF
 
-**ARCHAEOLOGICAL READING**
+!!! abstract "ARCHAEOLOGICAL READING"
 
-FRUA's experience allows us to reformulate one of the main conclusions of this research:
+    FRUA's experience allows us to reformulate one of the main conclusions of this research:
 
-The community will try to cross the Runtime Boundary when it perceives as creative content something that the engine keeps enclosed in constants.
+    The community will try to cross the Runtime Boundary when it perceives as creative content something that the engine keeps enclosed in constants.
 
-The answer does not necessarily have to be opening the Runtime.
+    The answer does not necessarily have to be opening the Runtime.
 
-In fact, FRUA demonstrates that those are two different questions:
+    In fact, FRUA demonstrates that those are two different questions:
 
-``` text
-IMPLEMENTATION
-Raycaster
-Navigation
-Renderer
-Runtime state machines
-Execution
-        │
-        │  LoF responsibility
-        ▼
-═══════════════════════════════
-        RUNTIME BOUNDARY
-═══════════════════════════════
-        ▲
-        │  potentially authorable
-        │
-GAME DEFINITION
-Creatures
-Items
-Spells
-Classes
-Events
-Quests
-World
-...
-```
+    ``` text
+    IMPLEMENTATION
+    Raycaster
+    Navigation
+    Renderer
+    Runtime state machines
+    Execution
+            │
+            │  LoF responsibility
+            ▼
+    ═══════════════════════════════
+            RUNTIME BOUNDARY
+    ═══════════════════════════════
+            ▲
+            │  potentially authorable
+            │
+    GAME DEFINITION
+    Creatures
+    Items
+    Spells
+    Classes
+    Events
+    Quests
+    World
+    ...
+    ```
 
-The important question is not:
+    The important question is not:
 
-Should we allow the user to modify the Runtime?
+    Should we allow the user to modify the Runtime?
 
-The question is:
+    The question is:
 
-What concepts does the user legitimately consider part of their creative language?
+    What concepts does the user legitimately consider part of their creative language?
 
-If those concepts are kept as authorable data through clean mechanisms —for example, typed `.tres` Resources— the need to resort to reverse-engineering the binary decreases, and the risk of fragmenting the ecosystem through incompatible hacks is reduced.
+    If those concepts are kept as authorable data through clean mechanisms —for example, typed `.tres` Resources— the need to resort to reverse-engineering the binary decreases, and the risk of fragmenting the ecosystem through incompatible hacks is reduced.
 
 ### Design principle
 

@@ -802,13 +802,13 @@ Some testimonies have emphasized Arneson's difficulties adapting to editorial de
 
 Other participants from that time offer a more complex image of TSR's internal culture.
 
-**CAUTION**
+!!! warning "CAUTION"
 
-> We should not reduce his departure to: "Arneson didn't meet *deadlines* and TSR fired him."
+    > We should not reduce his departure to: "Arneson didn't meet *deadlines* and TSR fired him."
 
-The available evidence points to a much more complex relationship.
+    The available evidence points to a much more complex relationship.
 
-The matter deserves to be studied through specific documentation if we want to reconstruct it with greater precision in the future.
+    The matter deserves to be studied through specific documentation if we want to reconstruct it with greater precision in the future.
 
 #### 24. The transformation of TSR
 

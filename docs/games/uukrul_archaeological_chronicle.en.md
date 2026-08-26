@@ -8,6 +8,12 @@
 
 ------------------------------------------------------------------------
 
+<figure markdown>
+![The Dark Heart of Uukrul — Archaeological Chronicles — RPG Archaeology](../assets/images/games/uukrul/Uukrul_RPG_Archaeology_YouTube_Thumbnail.png)
+</figure>
+
+[▶ Watch the episode on YouTube](YOUTUBE_VIDEO_URL)
+
 ## Prologue --- We Entered Looking for a Map
 
 There are excavations that begin with a great question and others that begin because someone looks at a 1024-byte file and thinks: **"what the hell is in here?"**

@@ -301,11 +301,14 @@ Between the American military wargaming experiments of the 19th century and the 
 
 Therefore:
 
-**DOCUMENTED FACT:** The United States adopted and adapted the European *Kriegsspiel* within military contexts during the 19th century.
+!!! success "DOCUMENTED FACT"
+    The United States adopted and adapted the European *Kriegsspiel* within military contexts during the 19th century.
 
-**DOCUMENTED FACT:** during the 20th century, an important civil and commercial wargaming culture developed in the United States.
+!!! success "DOCUMENTED FACT"
+    during the 20th century, an important civil and commercial wargaming culture developed in the United States.
 
-**NOT ASSUMED:** that there exists a direct and uninterrupted institutional chain between Totten or Livermore and the designers who would later create the RPG.
+!!! warning "NOT ASSUMED"
+    that there exists a direct and uninterrupted institutional chain between Totten or Livermore and the designers who would later create the RPG.
 
 They are related strata of a larger history, but their concrete relationship must be demonstrated when evidence exists.
 
