@@ -145,15 +145,15 @@ El objetivo inmediato no es publicar ni construir una gran base de datos, sino c
 ## Influences
 
 - [Influences](influences.md)
-- [The Twin Cities School](The Twin Cities School — El laboratorio antes de D&D.md)
-- [*Blackmoor*](blackmoore.md)
+- [The Twin Cities School](twin_cities_school.md)
+- [*Blackmoor*](blackmoor.md)
 - [*Chainmail*](chainmail.md)
-- [*Dungeons & Dragons*](Arnenson y Gygax La hisoria de D&D.md)
+- [*Dungeons & Dragons*](dnd_history.md)
 - [Origenes del CRPG](crpg_origins.md)
 
 ## Autopsias
 
 - [Wizardry I (1981)](games/wizardry_1.md)
-- [Dark Heart of Uukrul (1989)](games/Dark Heart of Uukrul_cronica_arqueologica.md)
-- [Bloodwych (1989)](games/Bloodwych (1989) — RPG Archaeology.md)
-- [Unlimited Adventures (1993)](games/frua_dungeon_craft_authoring_archaeology_es.md)
+- [Dark Heart of Uukrul (1989)](games/uukrul_archaeological_chronicle.md)
+- [Bloodwych (1989)](games/bloodwych.md)
+- [Unlimited Adventures (1993)](games/frua_dungeon_craft_authoring_archaeology.md)

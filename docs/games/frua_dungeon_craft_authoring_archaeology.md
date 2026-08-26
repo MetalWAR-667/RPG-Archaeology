@@ -1,950 +1,1259 @@
-# Unlimited Adventures / Dungeon Craft --- Authoring Architecture, Lessons and Future Questions
+# Unlimited Adventures / Dungeon Craft — Arquitectura de Creación, Lecciones y Preguntas para el Futuro
 
-> **RPG Archaeology --- Working Reference**
+> **Arqueología de RPG — Referencia de Trabajo**
 >
-> **Scope:** Forgotten Realms: Unlimited Adventures (FRUA), its
-> authoring model, community friction, and the later Dungeon Craft / UAF
-> response.
+> **Ámbito:** Forgotten Realms: Unlimited Adventures (FRUA), su modelo de creación, la fricción de la comunidad y la respuesta posterior Dungeon Craft / UAF.
 >
-> **Purpose:** This document is not a specification for Lands of
-> Folklore (LoF). It is an archaeological reference intended to preserve
-> design questions, historical solutions, failure modes, and possible
-> future directions. Its value is to be revisited when a LoF feature or
-> architectural cut raises a similar question.
+> **Propósito:** Este documento no es una especificación para Lands of Folklore (LoF). Es una referencia arqueológica destinada a preservar preguntas de diseño, soluciones históricas, modos de fallo y posibles direcciones futuras. Su valor radica en ser revisado cuando una característica o un recorte arquitectónico de LoF plantee una pregunta similar.
 
 ------------------------------------------------------------------------
+## 0. El factor humano, producción y comunidad
 
-## 1. Why FRUA matters to RPG Archaeology
+### 0.1. El estudio y los desarrolladores: MicroMagic y SSI
 
-Forgotten Realms: Unlimited Adventures is especially relevant because
-its objective is unusually close to one of the long-term ambitions
-behind LoF:
+CONFIRMED
 
-> **Give users a tool for making RPG adventures, not a programming
-> environment.**
+A diferencia de buena parte de los títulos troncales de la saga Gold Box desarrollados directamente bajo SSI, Forgotten Realms: Unlimited Adventures fue desarrollado por MicroMagic y publicado por Strategic Simulations, Inc. (SSI).
 
-The interesting question is therefore not merely how FRUA represented
-maps, combat, inventory, or AD&D rules. The more useful question is:
+Los créditos permiten identificar un núcleo relativamente pequeño detrás de la transformación de la tecnología Gold Box en una herramienta de creación de aventuras:
 
-> **How did SSI expose enough of an RPG to let non-programmers author
-> adventures while keeping the machinery of the engine out of their
-> way?**
+Jason T. Linhart — Lead Design, dirección y programación. Figura central del diseño de FRUA y miembro del equipo de programación responsable de convertir las capacidades del motor Gold Box en una herramienta de autoría utilizable por jugadores y diseñadores no programadores.
+David Blake y Bill Sloan — Programación. Formaron parte del núcleo técnico del proyecto; Sloan aparece además vinculado a tareas de diseño y documentación.
+Eric Halloran y Herb Perez — Graphics / Artwork, con Carol Tanguay acreditada en arte adicional. El trabajo artístico debía adaptar el lenguaje visual heredado de los juegos Gold Box a un entorno donde paredes, fondos, retratos, sprites y otros elementos pudieran utilizarse como piezas de construcción.
+David Govett y George “The Fat Man” Sanger — Música, continuando la colaboración habitual alrededor de la tecnología sonora utilizada por SSI.
+John W. Ratcliff — IBM Digital Sound Driver, responsable específicamente acreditado de esta parte de la infraestructura de sonido.
+Clyde Caldwell — Arte de portada. Uno de los ilustradores más reconocibles de TSR y responsable de proporcionar a FRUA una identidad comercial inmediatamente asociable con AD&D.
 
-The later history of the FRUA community and Dungeon Craft makes the case
-even more valuable. It provides something close to a longitudinal
-experiment:
+### Lectura arqueológica
+
+**ARCHAEOLOGICAL READING**
+
+Lo interesante no es únicamente quién programó FRUA, sino el tipo de trabajo que tuvo que realizar este equipo.
+
+Los juegos Gold Box anteriores habían sido construidos como productos cerrados: sus diseñadores trabajaban con herramientas y estructuras internas destinadas a producir un juego concreto.
+
+FRUA requería invertir esa relación.
+
+``` text
+ANTES
+
+Herramientas internas
+        ↓
+Diseñadores de SSI
+        ↓
+Gold Box Game
+        ↓
+Jugador
+```
 
 ``` text
 FRUA
-  ↓
-users create adventures for years
-  ↓
-users discover hard limits
-  ↓
-hacks and external tooling appear
-  ↓
-Dungeon Craft / UAF revisits the model
-  ↓
-more extensibility
-  ↓
-new complexity and compatibility problems
+
+Herramientas convertidas en producto
+        ↓
+Jugador / Autor
+        ↓
+Adventure Design
+        ↓
+Otro jugador
 ```
 
-This allows us to study not only what SSI designed, but also **which
-boundaries users eventually tried to break**.
+El problema ya no era simplemente conseguir que el motor ejecutase una aventura.
 
-------------------------------------------------------------------------
+Había que conseguir que una persona ajena al equipo pudiera describir esa aventura sin necesitar comprender cómo funcionaba el motor.
 
-## 2. First principle: the Runtime belongs to the tool, not to the author
+Ése es precisamente el problema de authoring que hace especialmente relevante FRUA para RPG Archaeology.
 
-The strongest conclusion from the study is simple:
+### 0.2. Contexto de producción: el canto del cisne de la era Gold Box
 
-> **The Runtime should be ours, not the user's.**
+CONFIRMED / STRONG
 
-FRUA exposes concepts belonging to the RPG domain:
+FRUA apareció en 1993, cuando la tecnología Gold Box se encontraba ya al final de una larga trayectoria comercial iniciada con Pool of Radiance en 1988.
 
--   maps;
--   walls;
--   blockages;
--   zones;
--   encounters;
--   quests;
--   NPCs;
--   shops;
--   treasure;
--   text;
--   stairs;
--   teleportation;
--   events.
+Mientras tanto, el CRPG estaba experimentando una rápida transformación técnica y visual. Juegos como Eye of the Beholder y Ultima Underworld habían mostrado formas muy diferentes de representar y explorar mundos tridimensionales, y la tecnología Gold Box comenzaba inevitablemente a mostrar su edad.
 
-It does not require the adventure author to understand the internal
-state machine of the engine.
+FRUA tomó buena parte de aquel patrimonio tecnológico y de contenido y lo convirtió en un construction set para aventuras de AD&D.
 
-Conceptually:
+El producto incluía además una aventura completa de ejemplo, The Heirs to Skull Crag, que servía tanto como contenido jugable como demostración práctica de aquello que podía construirse con las herramientas.
 
-``` text
-AUTHOR
-  │
-  │ expresses intent
-  ▼
-AUTHORING MODEL
-  │
-  │ interpreted by
-  ▼
-RUNTIME
-```
+### Lectura arqueológica
 
-This gives us a useful separation for LoF:
+**ARCHAEOLOGICAL READING**
 
-``` text
-WORLD AUTHORING
-Where?
+Resulta tentador interpretar FRUA simplemente como el último aprovechamiento comercial de una tecnología envejecida.
 
-EVENT AUTHORING
-What happens, and when?
+Pero desde el punto de vista de herramientas existe otra lectura mucho más interesante:
 
-RUNTIME
-How is it executed?
-```
+Un runtime maduro puede adquirir una segunda vida cuando sus capacidades dejan de utilizarse únicamente para producir contenido interno y se convierten en un lenguaje de creación para terceros.
 
-The user should not need to know about the raycaster, navigation
-internals, actor registration, runtime door implementations, render
-pipelines, or engine state machines in order to say:
-
-> When the party enters this room carrying the silver key, show this
-> event and open that door.
-
-The Runtime remains authoritative over execution.
-
-------------------------------------------------------------------------
-
-## 3. The map as an authoring surface
-
-FRUA/UAF treats the map as the place where the author expresses spatial
-intent.
-
-The editor exposes explicit authoring modes for concepts such as:
-
-``` text
-WALL
-EVENT
-BACKGROUND
-ZONE
-ENTRY POINT
-BLOCKAGE
-```
-
-The important lesson is not the exact UI implementation. It is the
-conceptual separation.
-
-The same location can participate in several different systems without
-those systems needing to be the same data structure.
-
-A selected location can tell the author:
-
-``` text
-Position
-Walls
-Blockages
-Zone
-Background
-Event
-```
-
-while internally those concepts remain separate.
-
-### Lesson for LoF
-
-> **The Inspector may aggregate everything relevant to a selected place
-> without implying that everything belongs architecturally to
-> StructuralCell.**
-
-This distinction becomes increasingly important as authoring grows.
-
-------------------------------------------------------------------------
-
-## 4. Walls, blockages and the value of StructuralEdge
-
-FRUA/UAF separates the visual wall from its blockage semantics.
-
-Conceptually, a side of a cell can contain several dimensions:
-
-``` text
-appearance
-+
-passability
-+
-interaction condition
-```
-
-Blockage types can express concepts such as:
-
-``` text
-OPEN
-SECRET
-BLOCKED
-FALSE DOOR
-LOCKED
-WIZARD LOCKED
-KEY LOCKED
-...
-```
-
-This is useful because it demonstrates that:
-
-> **What a boundary looks like and what that boundary permits are not
-> necessarily the same property.**
-
-FRUA/UAF stores directional wall information per cell and therefore
-needs editor logic to maintain the opposite side of the neighbouring
-cell.
-
-Conceptually:
-
-``` text
-Cell A EAST
-    ║
-Cell B WEST
-```
-
-If one changes, the tool may need to update the other.
-
-LoF's explicit `StructuralEdge` solves the same authoring problem at the
-model level:
-
-``` text
-      StructuralEdge
-         /       \
-     Cell A     Cell B
-```
-
-Rather than maintaining two conceptual copies of one frontier, LoF can
-represent the frontier itself.
-
-### Archaeological value
-
-This gives us a concrete historical example of the problem that
-`StructuralEdge` eliminates.
-
-------------------------------------------------------------------------
-
-## 5. Zones: shared context above individual cells
-
-One of the more useful FRUA/UAF concepts is the **Zone**.
-
-A zone can provide shared contextual properties to an area rather than
-forcing every individual cell to repeat them.
-
-Potential zone-level concepts include:
-
--   ambient behaviour;
--   rest behaviour;
--   environmental rules;
--   combat context;
--   magical restrictions;
--   sounds;
--   local modifiers;
--   presentation defaults.
-
-Conceptually:
-
-``` text
-CELL
-  ↓ belongs to
-ZONE / REGION
-  ↓ supplies shared context
-```
-
-### Future LoF question
-
-When environmental authoring grows, ask:
-
-> **Which properties truly belong to Cell/Edge, and which should belong
-> to a shared Region/Zone?**
-
-Possible future LoF region responsibilities might include:
-
-``` text
-ambient
-lighting profile
-music
-encounter rules
-rest rules
-environmental state
-magic modifiers
-local presentation defaults
-```
-
-This is a question for future design, not an implementation requirement.
-
-------------------------------------------------------------------------
-
-## 6. Event authoring: programming without presenting programming
-
-This is probably FRUA's most important authoring lesson.
-
-The author is not presented with generic programming primitives such as:
-
-``` text
-variable
-function
-callback
-integer
-branch
-```
-
-Instead, the vocabulary is expressed in RPG concepts:
-
-``` text
-COMBAT
-TEXT
-GIVE TREASURE
-QUEST
-SHOP
-STAIRS
-TELEPORT
-ADD NPC
-DAMAGE
-TEMPLE
-ENCOUNTER
-```
-
-The user is constructing logic, but the tool speaks the language of
-adventure design.
-
-### Core model
-
-The essential model can be reduced to:
-
-``` text
-TRIGGER
-   ↓
-EVENT
-   ↓
-CHAIN
-```
-
-Conditions can represent concepts such as:
-
-``` text
-party has item
-party lacks item
-quest state
-time/day condition
-probability
-party composition
-position
-direction
-special key
-NPC presence
-...
-```
-
-The result is logically equivalent to programming:
-
-``` text
-IF party has Ruby Key
-THEN show text
-ELSE do something else
-```
-
-but the author experiences it as RPG authoring.
-
-------------------------------------------------------------------------
-
-## 7. Event chains as a domain-specific language
-
-Events can lead to further events.
-
-At the simplest level:
-
-``` text
-EVENT A
-   │
-   ├── happened ─────→ EVENT B
-   │
-   └── not happened ─→ EVENT C
-```
-
-Some event types can expose multiple semantic exits:
-
-``` text
-                 ┌─ FIGHT ─→ Combat
-                 │
-Encounter ───────┼─ TALK ──→ Dialogue
-                 │
-                 └─ FLEE ──→ Escape
-```
-
-This is effectively a small **domain-specific programming language for
-RPG adventures**.
-
-The crucial difference from generic visual scripting is that each
-high-level event already understands its domain.
-
-A password event knows what a password means.
-
-An encounter event knows what encounter outcomes mean.
-
-A treasure event knows what giving treasure means.
-
-### Lesson
-
-> **Power does not require infinitely generic primitives. A finite
-> vocabulary of sufficiently expressive RPG concepts can produce
-> enormous combinatorial flexibility.**
-
-This should remain a major reference point if LoF eventually develops
-event authoring.
-
-------------------------------------------------------------------------
-
-## 8. Placement is not behaviour
-
-FRUA/UAF gives us a useful separation:
-
-``` text
-MAP LOCATION
-     │
-     └── event exists here
-              │
-              ▼
-          EVENT DATA
-              │
-              ▼
-          EVENT CHAIN
-```
-
-The spatial structure identifies **where** logic begins.
-
-The event system defines **what** happens.
-
-The Runtime knows **how** to perform it.
-
-For LoF:
-
-> **The map should not become the scripting language.**
-
-A cell, edge, placed instance, or region may reference behaviour without
-needing to contain the implementation of that behaviour.
-
-------------------------------------------------------------------------
-
-## 9. Authoring constraints are not Runtime constraints
-
-FRUA/UAF also demonstrates that an editor need not obey every gameplay
-restriction.
-
-For example, an authoring tool may permit movement through geometry that
-would block the player.
-
-The general principle is:
-
-> **The restrictions of the Runtime do not automatically need to be
-> restrictions of the authoring tool.**
-
-This is relevant to LoF's DRP and future preview/navigation tooling.
-
-The author may need privileged operations that the eventual player never
-receives.
-
-------------------------------------------------------------------------
-
-## 10. Validation before execution
-
-A mature authoring tool needs to reason about content without requiring
-the user to discover every problem during play.
-
-FRUA/UAF exposes concepts such as:
-
-``` text
-Validate Design
-Test Saved Design
-Test Saved Design From Start
-Error Log
-```
-
-This establishes several distinct questions:
-
-``` text
-Is the design structurally valid?
-
-Does this local situation work?
-
-Does the adventure work from the beginning?
-
-What went wrong?
-```
-
-### LoF parallel
-
-LoF's Compiler/Diagnostics architecture gives us a natural place for
-this:
-
-``` text
-EditedDocument
-      ↓
-Validation / Compiler
-      ↓
-Diagnostics
-      ↓
-Runtime
-```
-
-The important UX lesson is that diagnostics should use **authoring
-vocabulary**.
-
-Bad:
-
-``` text
-Null reference in runtime event handler.
-```
-
-Better:
-
-``` text
-This event transfers the party to a map that no longer exists.
-```
-
-------------------------------------------------------------------------
-
-## 11. Preview is not Playtest
-
-FRUA/UAF's distinction between testing locally and testing from the
-beginning maps well to a future distinction in LoF.
-
-### Local iteration
-
-``` text
-edit
- ↓
-test here
- ↓
-observe
- ↓
-return
- ↓
-edit
-```
-
-This answers questions such as:
-
-> Does this door compile correctly?
-
-> Does this wall appear correctly?
-
-> Does this event trigger?
-
-### Integration testing
-
-``` text
-start adventure
- ↓
-accumulate state
- ↓
-travel
- ↓
-complete previous events
- ↓
-reach target
- ↓
-verify behaviour
-```
-
-This answers:
-
-> Is this door open after completing the quest and arriving from the
-> previous map?
-
-### LoF implication
-
-``` text
-EditedDocument
-      ↓
-Compiler
-   ┌──┴──────────────┐
-   ↓                 ↓
-DRP / Preview    Full Runtime
-local test       integration test
-```
-
-> **Preview and Playtest are related but distinct tools.**
-
-------------------------------------------------------------------------
-
-## 12. Test Party / Test Context
-
-RPG testing has a special problem: the result often depends on
-accumulated state.
-
-A useful testing system may eventually need to define a reproducible
-starting context:
-
-``` text
-Spawn:
-  map
-  position
-  facing
-
-Party:
-  preset
-
-Inventory:
-  preset
-
-World State:
-  preset
-
-Quest State:
-  preset
-```
-
-This avoids requiring the designer to replay large sections of the
-adventure merely to reproduce one condition.
-
-### Future LoF seed
-
-A future DRP or testing layer could support **Test Context presets**.
-
-Not an immediate requirement.
-
-------------------------------------------------------------------------
-
-## 13. Module, Design and Campaign
-
-A useful distinction emerged from FRUA.
-
-### Module
-
-A module is essentially a spatial playable unit: dungeon, overland area,
-etc.
-
-Modules can be connected by transfers.
-
-``` text
-Village
-   ↓
-Wilderness
-   ↓
-Castle
-   ↓
-Dungeon
-```
-
-### Adventure Design
-
-The distributed design is the complete authored adventure containing its
-modules and supporting content.
-
-Conceptually:
-
-``` text
-ADVENTURE DESIGN
-├── global content
-├── quests
-├── NPCs
-├── items
-├── module 01
-├── module 02
-├── module 03
-└── ...
-```
-
-### Campaign
-
-FRUA could represent a long campaign **inside one sufficiently large
-Design**, but did not provide a particularly rich higher-order campaign
-abstraction coordinating independent adventures.
-
-This exposes a useful future question for LoF:
+El cambio puede representarse así:
 
 ``` text
 ENGINE
   ↓
-PROJECT / CAMPAIGN?
+GAME
   ↓
-ADVENTURE?
+END OF PRODUCT LIFE
+
+frente a:
+
+ENGINE
   ↓
-MAP
+AUTHORING TOOL
   ↓
-REGION
+USER CONTENT
   ↓
-CELL / EDGE / INSTANCE
+NEW USER CONTENT
   ↓
-EVENT
-```
-
-We do **not** need to create every level in this hierarchy.
-
-The question is:
-
-> **What is the largest explicit editorial unit LoF actually needs?**
-
-`campaign.gd` remains forbidden until Elminster grants written
-permission.
-
-------------------------------------------------------------------------
-
-## 14. What frustrated FRUA users?
-
-This may be more informative than studying what worked.
-
-The frustrations can be separated into several classes.
-
-### 14.1 Quantitative limits
-
-Examples historically included limited:
-
--   map dimensions;
--   events;
--   wallsets;
--   backgrounds;
--   images;
--   monster entries;
--   text capacity.
-
-The lesson is simple:
-
-> **Do not accidentally turn an implementation limit into a conceptual
-> rule of the authoring model.**
-
-If LoF currently prefers a certain map size for technical reasons, that
-does not necessarily mean the conceptual definition of `Map` should
-permanently encode that number.
-
-------------------------------------------------------------------------
-
-## 15. The more important frustration: constants users considered content
-
-FRUA allowed extensive adventure authoring but kept many game concepts
-comparatively fixed.
-
-The community eventually wanted greater control over:
-
-``` text
-classes
-races
-items
-spells
-monsters
-rules
-presentation
-```
-
-This produced hacks and external tooling.
-
-The important lesson is:
-
-> **Runtime private does not imply game data private.**
-
-There is a fundamental distinction between:
-
-``` text
-CODE THAT MAKES THE GAME WORK
-```
-
-and:
-
-``` text
-DATA THAT DEFINES THIS PARTICULAR GAME/ADVENTURE
-```
-
-Future LoF questions therefore include:
-
-``` text
-Classes             authorable?
-Races               authorable?
-Items               authorable?
-Spells              authorable?
-Creatures           authorable?
-Status Effects      authorable?
-Rules               authorable?
-```
-
-Each boundary should be deliberate.
-
-------------------------------------------------------------------------
-
-## 16. Dungeon Craft's response: move the boundary
-
-Dungeon Craft did not discard FRUA's fundamental authoring philosophy.
-
-Instead, it made more concepts authorable and dramatically raised old
-implementation ceilings.
-
-Its response can be summarized as:
-
-``` text
-FRUA
-Maps / Events / Adventure Content
-        ↓
-many fixed game definitions
-
-Dungeon Craft
-Maps / Events / Adventure Content
-        +
-Items / Monsters / Spells
-Classes / Races / Abilities
-        +
-greater scripting/extensibility
-```
-
-This solved genuine creative restrictions.
-
-But it introduced a new cost.
-
-------------------------------------------------------------------------
-
-## 17. Extensibility has a price
-
-As more of the game becomes configurable, the author must understand
-more of the game.
-
-A useful conceptual progression is:
-
-### Layer 1 --- Adventure Authoring
-
-``` text
-maps
-events
-quests
-encounters
-NPCs
-treasure
-world state
-```
-
-### Layer 2 --- Game Content Authoring
-
-``` text
-items
-creatures
-classes
-races
-spells
-abilities
-```
-
-### Layer 3 --- Rule Authoring / Modding
-
-``` text
-formulas
-scripts
-behaviour
-system mechanics
-runtime extensions
-```
-
-These layers do **not** need to be exposed simultaneously.
-
-### Lesson for LoF
-
-> **Extensibility should grow in layers rather than destroying the
-> simple abstraction encountered by a new author.**
-
-A creator should be able to make a complete adventure without first
-understanding how the spell database or combat formulas work.
-
-------------------------------------------------------------------------
-
-## 18. Progressive Editor --- seed generated by this study
-
-This investigation produced a possible LoF UX concept.
-
-A common failure mode of powerful tools is the first-launch reaction:
-
-> "What the hell is this Enterprise control panel?"
-
-This is especially relevant for younger users or creators unfamiliar
-with classic RPG construction tools.
-
-### Possible solution: progressive disclosure through mastery
-
-The Editor could optionally begin with a reduced tool surface:
-
-``` text
-BEGINNER
-
-Cell
-Wall
-Door
-Object
-Test
-```
-
-As the author uses and successfully tests concepts, additional tools
-become visible:
-
-``` text
-Zones
-Events
-Transfers
-Conditions
-Event Chains
-Creature Authoring
-Item Authoring
+NEW USER CONTENT
+  ↓
 ...
 ```
 
-The progression could behave almost like achievements.
+La tecnología deja de producir únicamente productos y empieza a producir productores de contenido.
 
-However:
+### Lección de producción para LoF
 
-> **This must never be a hard capability barrier.**
+La madurez de un Runtime puede aumentar el valor de sus herramientas de autoría.
 
-Possible settings:
+Cuando las reglas, capacidades y límites de un motor están suficientemente comprendidos, una capa de authoring puede transformar esa estabilidad técnica en capacidad creativa para terceros y prolongar enormemente la vida útil del ecosistema.
+
+Esto no implica que el editor deba aparecer únicamente al final de la vida del motor. En LoF, Editor y Runtime forman parte del desarrollo desde mucho antes.
+
+La lección útil es otra:
+
+Cuanto más estable y comprensible sea el contrato entre Authoring y Runtime, más viable resulta convertir las capacidades internas del motor en herramientas seguras para usuarios externos.
+
+### 0.3. El ecosistema comunitario: de los diseños a los hacks
+
+CONFIRMED / STRONG
+
+La longevidad de FRUA terminó dependiendo mucho menos del soporte oficial de SSI que de la comunidad que se formó alrededor de la herramienta.
+
+Los diseños circularon mediante los servicios online y comunidades disponibles en la época y posteriormente alrededor de archivos, webs y foros especializados como The Magic Mirror, UA File Archive y las comunidades que terminarían convergiendo alrededor de Gold Box Games.
+
+La comunidad no se limitó a crear aventuras.
+
+También comenzó a descubrir los límites técnicos y editoriales del sistema.
+
+### Ray Dyer y The Realm
+
+CONFIRMED / STRONG
+
+Uno de los ejemplos más ambiciosos del potencial de FRUA fue el trabajo de Ray Dyer, responsable de The Realm.
+
+Dyer produjo una enorme colección de diseños basada en módulos clásicos de Dungeons & Dragons, llegando a construir del orden de cuarenta aventuras relacionadas y un entorno que permitía recorrer y seleccionar diferentes módulos.
+
+Desde nuestro análisis resulta especialmente interesante porque The Realm atacó precisamente una de las limitaciones conceptuales que hemos identificado en FRUA.
+
+El producto entendía bien:
 
 ``` text
-Editor Experience
-
-Progressive
-Standard
-Full / Expert
+MODULE
+    ↓
+ADVENTURE DESIGN
 ```
 
-A console command or setting could unlock everything immediately.
+pero proporcionaba una abstracción mucho menos potente por encima de múltiples Adventures.
 
-### Important architectural property
-
-The project format remains identical.
+La comunidad terminó aproximándose a algo parecido a:
 
 ``` text
-Progressive Mode
-Standard Mode
-Expert Mode
-       │
-       ▼
-same authoring model
-same data
-same runtime
+THE REALM
+    │
+    ├── Adventure
+    ├── Adventure
+    ├── Adventure
+    ├── Adventure
+    └── ...
 ```
 
-Only the visible UX surface changes.
+Es decir:
 
-### Persistent author mastery
+los usuarios comenzaron a construir mediante convenciones y contenido una capa de Campaign que la herramienta no proporcionaba formalmente con la misma riqueza.
 
-Progression should probably belong to the **author**, not to each
-project.
+Éste es un patrón recurrente en herramientas de autoría:
 
-Once someone has demonstrated familiarity with Events, a new project
-should not hide Events again.
+cuando muchos usuarios construyen repetidamente la misma abstracción por encima de la herramienta, puede existir un concepto editorial ausente debajo.
 
-This turns progression into a pedagogical layer over the editor rather
-than game-like grinding.
+### 0.4. Cuando los autores atravesaron el Runtime Boundary
+
+CONFIRMED
+
+FRUA permitía modificar una gran cantidad de contenido, pero mantenía otras partes del juego encerradas dentro de las estructuras y constantes del ejecutable.
+
+Cuando la comunidad quiso modificar aquello que SSI no había considerado parte del lenguaje de autoría, comenzó la ingeniería inversa.
+
+Aparecieron herramientas y técnicas alrededor de:
+
+CKIT.EXE;
+parches del ejecutable;
+worldhacks;
+modificación de tablas internas;
+alteraciones de clases, razas, objetos y reglas;
+modificaciones gráficas más allá de los límites previstos originalmente.
+
+Una pieza especialmente importante de este ecosistema fue UAShell.
+
+En lugar de distribuir necesariamente ejecutables completos modificados, los diseños hackeados podían utilizar archivos como DIFF.TBL, que describían diferencias que se aplicaban sobre la copia local de CKIT.EXE.
+
+Conceptualmente:
+
+``` text
+ORIGINAL CKIT.EXE
+       +
+    DIFF.TBL
+       ↓
+MODIFIED LOCAL RUNTIME
+```
+
+Esto permitió que la comunidad extendiera FRUA mucho más allá de las capacidades previstas por SSI.
+
+Pero tuvo un coste.
+
+``` text
+FRUA
+ ↓
+simple authoring model
+ ↓
+hard limits
+ ↓
+community hacks
+ ↓
+greater freedom
+ ↓
+external tools
+ ↓
+patches
+ ↓
+compatibility requirements
+ ↓
+greater technical complexity
+```
+
+La comunidad recuperó extensibilidad, pero parte de la simplicidad original comenzó inevitablemente a desaparecer.
+
+### 0.5. De UA2000 a UA Forever y Dungeon Craft
+
+CONFIRMED / STRONG
+
+A finales de los años noventa apareció un intento mucho más ambicioso de resolver el problema: reconstruir la idea de Unlimited Adventures sobre una plataforma moderna en lugar de continuar extendiendo indefinidamente el ejecutable DOS original.
+
+La historia temprana del proyecto registra:
+
+``` text
+1999
+  ↓
+UA2000
+  ↓
+UA Forever
+  ↓
+UAF
+  ↓
+Dungeon Craft
+```
+
+El proyecto ya aparece documentado en agosto de 1999 y poco después adopta el nombre UA Forever. Fuentes de aquella primera etapa identifican a Robert Turner entre las figuras del proyecto temprano.
+
+Con el paso del tiempo, UA Forever evolucionaría hacia Dungeon Craft, mantenido y ampliado por diferentes miembros de la comunidad durante muchos años.
+
+Desarrolladores y colaboradores posteriores —entre ellos nombres asociados fuertemente a la historia moderna del proyecto como CocoaSpud y Manikus— continuaron ampliando sus capacidades.
+
+El objetivo dejó de ser simplemente hackear FRUA.
+
+Pasó a ser:
+
+recrear y extender el concepto de Unlimited Adventures sin quedar limitado por las estructuras cerradas y las restricciones técnicas del ejecutable original.
+
+Dungeon Craft terminaría permitiendo niveles de personalización muy superiores en áreas como:
+
+``` text
+classes
+races
+items
+monsters
+spells
+special abilities
+databases
+scripting
+art
+```
+
+Pero, como hemos visto en el resto de esta ficha, esa libertad también incrementó considerablemente la superficie conceptual que debía comprender un diseñador.
+
+### 0.6. El ciclo completo
+
+**ARCHAEOLOGICAL SYNTHESIS**
+
+La historia humana de FRUA puede resumirse mediante un ciclo extraordinariamente útil:
+
+``` text
+SSI / MICROMAGIC
+crean un lenguaje limitado de authoring
+            │
+            ▼
+USUARIOS
+aprenden ese lenguaje
+            │
+            ▼
+CREAN CONTENIDO
+            │
+            ▼
+DESCUBREN SUS LÍMITES
+            │
+            ▼
+QUIEREN EXPRESAR MÁS COSAS
+            │
+            ▼
+HACKS / UASHELL / REVERSE ENGINEERING
+            │
+            ▼
+MAYOR LIBERTAD
+            │
+            ▼
+MAYOR COMPLEJIDAD
+            │
+            ▼
+UA FOREVER / DUNGEON CRAFT
+            │
+            ▼
+NUEVO AUTHORING MODEL
+con una frontera mucho más abierta
+```
+
+No es simplemente la historia de un juego que sobrevivió gracias a sus fans.
+
+Es también la historia de una negociación de décadas acerca de dónde debe situarse la frontera entre el creador de una herramienta y el creador de contenido.
+
+### 0.7. Principio extraído para LoF
+
+**ARCHAEOLOGICAL READING**
+
+La experiencia de FRUA permite reformular una de las conclusiones principales de esta investigación:
+
+La comunidad intentará cruzar el Runtime Boundary cuando perciba como contenido creativo algo que el motor mantiene encerrado en constantes.
+
+La respuesta no tiene por qué ser abrir el Runtime.
+
+De hecho, FRUA demuestra que ésas son dos cuestiones diferentes:
+
+``` text
+IMPLEMENTATION
+Raycaster
+Navigation
+Renderer
+Runtime state machines
+Execution
+        │
+        │  LoF responsibility
+        ▼
+═══════════════════════════════
+        RUNTIME BOUNDARY
+═══════════════════════════════
+        ▲
+        │  potentially authorable
+        │
+GAME DEFINITION
+Creatures
+Items
+Spells
+Classes
+Events
+Quests
+World
+...
+```
+
+La pregunta importante no es:
+
+¿Debemos permitir que el usuario modifique el Runtime?
+
+La pregunta es:
+
+¿Qué conceptos considera legítimamente el usuario parte de su lenguaje creativo?
+
+Si esos conceptos se mantienen como datos autorables mediante mecanismos limpios —por ejemplo, Resources .tres tipados— disminuye la necesidad de recurrir a ingeniería inversa sobre el binario y se reduce el riesgo de fragmentar el ecosistema mediante hacks incompatibles.
+
+### Principio de diseño
+
+Runtime privado; lenguaje creativo extensible.
+
+LoF debería intentar mantener bajo su responsabilidad la maquinaria que ejecuta el juego, mientras decide deliberadamente qué datos y conceptos del dominio pueden pertenecer al autor.
+
+FRUA demuestra el peligro de cerrar demasiado esa frontera.
+
+Dungeon Craft demuestra el peligro opuesto de abrirla hasta hacer que toda la complejidad del sistema alcance al usuario.
+
+El problema interesante para LoF se encuentra exactamente entre ambos extremos.
 
 ------------------------------------------------------------------------
 
-## 19. Godot Resources may eliminate the need for Dungeon Craft-style databases
+## 1. Por qué FRUA importa para la Arqueología de RPG
 
-Dungeon Craft needed explicit databases for classes, monsters, items,
-spells and related definitions.
+Forgotten Realms: Unlimited Adventures es especialmente relevante porque su objetivo es inusualmente próximo a una de las ambiciones a largo plazo detrás de LoF:
 
-LoF is being built on Godot and already uses Resource-based authoring.
+> **Darle al usuario una herramienta para crear aventuras de RPG, no un entorno de programación.**
 
-Therefore, we should not copy the historical implementation when the
-modern platform already solves the underlying problem.
+La pregunta interesante no es tanto cómo FRUA representaba mapas, combate, inventario o reglas de AD&D. La pregunta más útil es:
 
-A possible LoF model:
+> **¿Cómo exponía SSI lo suficiente de un RPG para permitir que no programadores crearan aventuras manteniendo la maquinaria del motor fuera de su camino?**
+
+La historia posterior de la comunidad de FRUA y Dungeon Craft hace el caso aún más valioso. Proporciona algo cercano a un experimento longitudinal:
+
+``` text
+FRUA
+  ↓
+los usuarios crean aventuras durante años
+  ↓
+los usuarios descubren límites duros
+  ↓
+aparecen hacks y herramientas externas
+  ↓
+Dungeon Craft / UAF reexamina el modelo
+  ↓
+mayor extensibilidad
+  ↓
+nuevos problemas de complejidad y compatibilidad
+```
+
+Esto nos permite estudiar no solo lo que SSI diseñó, sino también **qué límites los usuarios finalmente intentaron romper**.
+
+------------------------------------------------------------------------
+
+## 2. Principio fundamental: el Runtime pertenece a la herramienta, no al autor
+
+La conclusión más fuerte del estudio es sencilla:
+
+> **El Runtime debería ser nuestro, no del usuario.**
+
+FRUA expone conceptos que pertenecen al dominio de los RPG:
+
+-   mapas;
+-   muros;
+-   bloqueos;
+-   zonas;
+-   encuentros;
+-   misiones;
+-   PNJs;
+-   tiendas;
+-   tesoros;
+-   texto;
+-   escalones;
+-   teleportes;
+-   eventos.
+
+No requiere que el autor de la aventura entienda la máquina de estados interna del motor.
+
+ Conceptualmente:
+
+``` text
+AUTOR
+  │
+  │ expresa su intención
+  ▼
+MODELO DE CREACIÓN
+  │
+  │ interpretado por
+  ▼
+RUNTIME
+```
+
+Esto nos brinda una separación útil para LoF:
+
+``` text
+CREACIÓN DE MUNDO
+¿Dónde?
+
+CREACIÓN DE EVENTOS
+¿Qué sucede y cuándo?
+
+RUNTIME
+¿Cómo se ejecuta?
+```
+
+El usuario no debería necesitar conocer los internos del raycaster, la navegación, el registro de actores, las implementaciones de puertas en runtime, las tuberías de renderizado o las máquinas de estados del motor para poder decir:
+
+> Cuando el grupo entre en esta habitación llevando la llave plateada, muestre este evento y abra esa puerta.
+
+El Runtime sigue siendo autoritativo sobre la ejecución.
+
+------------------------------------------------------------------------
+
+## 3. El mapa como superficie de creación
+
+FRUA/UAF trata al mapa como el lugar donde el autor expresa su intención espacial.
+
+El editor expone modos de creación explícitos para conceptos como:
+
+``` text
+MURO
+EVENTO
+FONDO
+ZONA
+PUNTO DE ENTRADA
+BLOQUEO
+```
+
+La lección importante no es la implementación exacta de la interfaz. Es la separación conceptual.
+
+La misma ubicación puede participar de varios sistemas sin que esos sistemas necesiten ser la misma estructura de datos.
+
+Una ubicación seleccionada puede decirle al autor:
+
+``` text
+Posición
+Muros
+Bloqueos
+Zona
+Fondo
+Evento
+```
+
+mientras internamente esos conceptos permanecen separados.
+
+### Lección para LoF
+
+> **El Inspector puede agregar todo lo relevante a un lugar seleccionado sin implicar que todo pertenezca arquitectónicamente a StructuralCell.**
+
+Esta distinción se vuelve cada vez más importante a medida que crece la creación.
+
+------------------------------------------------------------------------
+
+## 4. Muros, bloqueos y el valor de StructuralEdge
+
+FRUA/UAF separa el muro visual de su semántica de bloqueo.
+
+Conceptualmente, un lado de una celda puede contener varias dimensiones:
+
+``` text
+apariencia
++
+pasabilidad
++
+condición de interacción
+```
+
+Los tipos de bloqueo pueden expresar conceptos como:
+
+``` text
+ABIERTO
+SECRETO
+BLOQUEADO
+PUERTA FALSA
+CERRADO CON LLAVE
+CERRADO PARA HECHICEROS
+CERRADO CON LLAVE ESPECÍFICA
+...
+```
+
+Esto es útil porque demuestra que:
+
+> **Lo que una frontera parece y lo que esa frontera permite no son necesariamente la misma propiedad.**
+
+FRUA/UAF almacena información de muros direccionales por celda y, por tanto, necesita lógica de editor para mantener el lado opuesto de la celda vecina.
+
+Conceptualmente:
+
+``` text
+Celda A ESTE
+    ║
+Celda B OESTE
+```
+
+Si uno cambia, la herramienta puede necesitar actualizar el otro.
+
+El `StructuralEdge` explícito de LoF resuelve el mismo problema de creación a nivel de modelo:
+
+``` text
+      StructuralEdge
+         /       \
+     Celda A     Celda B
+```
+
+En lugar de mantener dos copias conceptuales de una misma frontera, LoF puede representar la frontera en sí.
+
+### Valor arqueológico
+
+Esto nos brinda un ejemplo histórico concreto del problema que `StructuralEdge` elimina.
+
+------------------------------------------------------------------------
+
+## 5. Zonas: contexto compartido por encima de celdas individuales
+
+Uno de los conceptos más útiles de FRUA/UAF es la **Zona**.
+
+Una zona puede proporcionar propiedades contextuales compartidas a un área en lugar de forzar a cada celda individual a repetirlas.
+
+Los conceptos potenciales a nivel de zona incluyen:
+
+-   comportamiento ambiental;
+-   comportamiento de descanso;
+-   reglas ambientales;
+-   contexto de combate;
+-   restricciones mágicas;
+-   sonidos;
+-   modificadores locales;
+-   valores por defecto de presentación.
+
+Conceptualmente:
+
+``` text
+CELDA
+  ↓ pertenece a
+ZONA / REGIÓN
+  ↓ suministra contexto compartido
+```
+
+### Pregunta futura para LoF
+
+Cuando crezca la creación ambiental, preguntar:
+
+> **¿Qué propiedades pertenecen realmente a Cell/Edge, y cuáles deberían pertenecer a una Región/Zona compartida?**
+
+Posibles responsabilidades futuras de la región de LoF podrían incluir:
+
+``` text
+ambiente
+perfil de iluminación
+música
+reglas de encuentro
+reglas de descanso
+estado ambiental
+modificadores mágicos
+valores por defecto de presentación local
+```
+
+Esta es una pregunta para el diseño futuro, no para un requisito de implementación.
+
+------------------------------------------------------------------------
+
+## 6. Creación de eventos: programar sin presentar programación
+
+Esta probablemente es la lección de creación más importante de FRUA.
+
+El autor no se le presenta con primitivas de programación genéricas como:
+
+``` text
+variable
+función
+retrollamada
+entero
+ramificación
+```
+
+En lugar de ello, el vocabulario se expresa en conceptos de RPG:
+
+``` text
+COMBATE
+TEXTO
+DAR TESORO
+Misión
+Tienda
+Escalera
+Teletransporte
+AGREGAR PNJ
+DAÑO
+Templo
+ENCUENTRO
+```
+
+El usuario está construyendo lógica, pero la herramienta habla el idioma del diseño de aventuras.
+
+### Modelo núcleo
+
+El modelo esencial puede reducirse a:
+
+``` text
+DISPARADOR
+   ↓
+EVENTO
+   ↓
+CADENA
+```
+
+Las condiciones pueden representar conceptos como:
+
+``` text
+el grupo tiene el objeto
+el grupo carece del objeto
+estado de la misión
+condición de tiempo/día
+probabilidad
+composición del grupo
+posición
+dirección
+tecla especial
+presencia de PNJ
+...
+```
+
+El resultado es lógicamente equivalente a la programación:
+
+``` text
+SI el grupo tiene la Llave de Rubí
+ENTONCES mostrar texto
+SINO hacer otra cosa
+```
+
+pero el autor lo experimenta como creación de RPG.
+
+------------------------------------------------------------------------
+
+## 7. Las cadenas de eventos como un lenguaje específico de dominio
+
+Los eventos pueden dar lugar a más eventos.
+
+Al nivel más simple:
+
+``` text
+EVENTO A
+   │
+   ├── ocurrió ─────→ EVENTO B
+   │
+   └── no ocurrió ─→ EVENTO C
+```
+
+Algunos tipos de eventos pueden exponer múltiples salidas semánticas:
+
+``` text
+                 ┌─ LUCHAR ─→ Combate
+                 │
+Encuentro ───────┼─ HABLAR ──→ Diálogo
+                 │
+                 └─ HUIR ──→ Escape
+```
+
+Esto es efectivamente un pequeño **lenguaje de programación específico de dominio para aventuras de RPG**.
+
+La diferencia crucial respecto a la programación visual genérica es que cada evento de nivel alto ya entiende su dominio.
+
+Un evento de contraseña sabe lo que significa una contraseña.
+
+Un evento de encuentro sabe lo que significan los resultados de un encuentro.
+
+Un evento de tesoro sabe lo que significa dar un tesoro.
+
+### Lección
+
+> **El poder no requiere primitivas infinitamente genéricas. Un vocabulario finito de conceptos de RPG suficientemente expresivos puede producir una flexibilidad combinatoria enorme.**
+
+Esto debería seguir siendo un punto de referencia importante si LoF eventualmente desarrollara creación de eventos.
+
+------------------------------------------------------------------------
+
+## 8. La colocación no es comportamiento
+
+FRUA/UAF nos brinda una separación útil:
+
+``` text
+UBICACIÓN EN EL MAPA
+     │
+     └── el evento existe aquí
+              │
+              ▼
+          DATOS DEL EVENTO
+              │
+              ▼
+          CADENA DE EVENTOS
+```
+
+La estructura espacial identifica **dónde** comienza la lógica.
+
+El sistema de eventos define **qué** sucede.
+
+El Runtime sabe **cómo** realizarlo.
+
+Para LoF:
+
+> **El mapa no debería convertirse en el lenguaje de secuencias.**
+
+Una celda, arista, instancia colocada o región puede referenciar comportamiento sin necesidad de contener la implementación de ese comportamiento.
+
+------------------------------------------------------------------------
+
+## 9. Las restricciones de creación no son restricciones de Runtime
+
+FRUA/UAF también demuestra que un editor no necesita obedecer cada restricción de juego.
+
+Por ejemplo, una herramienta de creación puede permitir el movimiento a través de geometría que bloquearía al jugador.
+
+El principio general es:
+
+> **Las restricciones del Runtime no necesitan ser automáticamente restricciones de la herramienta de creación.**
+
+Esto es relevante para el DRP de LoF y para las futuras herramientas de vista previa/navegación.
+
+El autor puede necesitar operaciones privilegiadas que el jugador final nunca recibe.
+
+------------------------------------------------------------------------
+
+## 10. Validación antes de la ejecución
+
+Una herramienta de creación madura necesita razonar sobre el contenido sin requerir que el usuario descubra cada problema durante el juego.
+
+FRUA/UAF expone conceptos como:
+
+``` text
+Validar Diseño
+Probar Diseño Guardado
+Probar Diseño Guardado Desde el Inicio
+Registro de Errores
+```
+
+Esto establece varias preguntas distintas:
+
+``` text
+¿El diseño es estructuralmente válido?
+
+¿Esta situación local funciona?
+
+¿La aventura funciona desde el principio?
+
+¿Qué salió mal?
+```
+
+### Paralelo para LoF
+
+La arquitectura de Compilador/Diagnósticos de LoF nos brinda un lugar natural para esto:
+
+``` text
+DocumentoEditado
+      ↓
+Validación / Compilador
+      ↓
+Diagnósticos
+      ↓
+Runtime
+```
+
+La lección de UX más importante es que los diagnósticos deben usar **vocabulario de creación**.
+
+Mal:
+
+``` text
+Referencia nula en el manejador de eventos en runtime.
+```
+
+Mejor:
+
+``` text
+Este evento transfiere el grupo a un mapa que ya no existe.
+```
+
+------------------------------------------------------------------------
+
+## 11. Vista previa no es prueba de juego
+
+La distinción de FRUA/UAF entre probar localmente y probar desde el principio se asigna bien a una futura distinción en LoF.
+
+### Iteración local
+
+``` text
+editar
+  ↓
+probar aquí
+  ↓
+observar
+  ↓
+regresar
+  ↓
+editar
+```
+
+Esto responde preguntas como:
+
+> ¿Esta puerta se compila correctamente?
+
+> ¿Esta apariencia se muestra correctamente?
+
+> ¿Se activa este evento?
+
+### Pruebas de integración
+
+``` text
+comenzar la aventura
+  ↓
+acumular estado
+  ↓
+viajar
+  ↓
+completar eventos anteriores
+  ↓
+llegar al objetivo
+  ↓
+verificar el comportamiento
+```
+
+Esto responde:
+
+> ¿Esta puerta se abre después de completar la misión y llegar desde el mapa anterior?
+
+### Implicación para LoF
+
+``` text
+DocumentoEditado
+      ↓
+Compilador
+   ┌─┴───────────────┐
+   ↓                 ↓
+DRP / Vista Previa    Runtime Completo
+prueba local          prueba de integración
+```
+
+> **Vista previa y prueba de juego son herramientas relacionadas pero distintas.**
+
+------------------------------------------------------------------------
+
+## 12. Grupo de Prueba / Contexto de Prueba
+
+El RPG tiene un problema especial de prueba: el resultado a menudo depende del estado acumulado.
+
+Un sistema de prueba útil eventualmente puede necesitar definir un contexto inicial reproducible:
+
+``` text
+Generar:
+  mapa
+  posición
+  orientación
+
+Grupo:
+  preestablecido
+
+Inventario:
+  preestablecido
+
+Estado del Mundo:
+  preestablecido
+
+Estado de Misiones:
+  preestablecido
+```
+
+Esto evita que el diseñador tenga que jugar grandes secciones de la aventura solo para reproducir una condición.
+
+### Semilla futura para LoF
+
+Una capa futura de DRP o prueba podría soportar **Contextos de Prueba preestablecidos**.
+
+No es un requisito inmediato.
+
+------------------------------------------------------------------------
+
+## 13. Módulo, Diseño y Campaña
+
+Una distinción útil emerjo de FRUA.
+
+### Módulo
+
+Un módulo es esencialmente una unidad espacial jugable: mazmorra, zona de mundo, etc.
+
+Los módulos pueden conectarse mediante transferencias.
+
+``` text
+Aldea
+   ↓
+Tierra Salvaje
+   ↓
+Castillo
+   ↓
+Mazmorra
+```
+
+### Diseño de Aventura
+
+El diseño distribuido es la aventura completa escrita que contiene sus módulos y contenido de apoyo.
+
+Conceptualmente:
+
+``` text
+DISEÑO DE AVENTURA
+├── contenido global
+├── misiones
+├── PNJs
+├── objetos
+├── módulo 01
+├── módulo 02
+├── módulo 03
+└── ...
+```
+
+### Campaña
+
+FRUA podía representar una larga campaña **dentro de un único Diseño lo suficientemente grande**, pero no ofrecía una abstracción de campaña de orden superior particularmente rica que coordinara aventuras independientes.
+
+Esto expone una pregunta útil para el futuro de LoF:
+
+``` text
+MOTOR
+  ↓
+PROYECTO / CAMPAÑA?
+  ↓
+AVENTURA?
+  ↓
+MAPA
+  ↓
+REGIÓN
+  ↓
+CELDA / ARISTA / INSTANCIA
+  ↓
+EVENTO
+```
+
+No necesitamos **crear** todos los niveles de esta jerarquía.
+
+La pregunta es:
+
+> **¿Cuál es la unidad editorial explícita más grande que LoF realmente necesita?**
+
+`campaign.gd` permanece prohibido hasta que Elminster conceda permiso por escrito.
+
+------------------------------------------------------------------------
+
+## 14. ¿Qué frustró a los usuarios de FRUA?
+
+Esto puede ser más informativo que estudiar lo que funcionó.
+
+Las frustraciones pueden separarse en varias clases.
+
+### 14.1 Límites cuantitativos
+
+Ejemplos históricos incluían limitaciones tales como:
+
+-   dimensiones del mapa;
+-   eventos;
+-   conjuntos de muros;
+-   fondos;
+-   imágenes;
+-   entradas de monstruos;
+-   capacidad de texto.
+
+La lección es sencilla:
+
+> **No convirtas accidentalmente un límite de implementación en una regla conceptual del modelo de creación.**
+
+Si LoF actualmente prefiere un cierto tamaño de mapa por razones técnicas, eso no significa necesariamente que la definición conceptual de `Mapa` deba codificar permanentemente ese número.
+
+------------------------------------------------------------------------
+
+## 15. La frustración más importante: constantes que los usuarios consideraban contenido
+
+FRUA permitía una extensa creación de aventuras pero mantenía muchos conceptos de juego comparativamente fijos.
+
+La comunidad eventualmente quiso mayor control sobre:
+
+``` text
+clases
+razas
+objetos
+hechizos
+monstruos
+reglas
+presentación
+```
+
+Esto produjo hacks y herramientas externas.
+
+La lección importante es:
+
+> **La privacidad del Runtime no implica que los datos del juego deban ser privados para los autores.**
+
+Hay una distinción fundamental entre:
+
+``` text
+CÓDIGO QUE HACE FUNCIONAR EL JUEGO
+```
+
+y:
+
+``` text
+DATOS QUE DEFINEN ESTE JUEGO/AVENTURA PARTICULAR
+```
+
+Las preguntas futuras de LoF incluyen, por tanto:
+
+``` text
+Clases            ¿creables por el autor?
+Razas            ¿creables por el autor?
+Objetos           ¿creables por el autor?
+Hechizos          ¿creables por el autor?
+Criaturas         ¿creables por el autor?
+Efectos de Estado ¿creables por el autor?
+Reglas            ¿creables por el autor?
+```
+
+Cada límite debería ser deliberado.
+
+------------------------------------------------------------------------
+
+## 16. La respuesta de Dungeon Craft: mover el límite
+
+Dungeon Craft no descartó la filosofía fundamental de creación de FRUA.
+
+En su lugar, hizo más conceptos creables y aumentó dramáticamente los viejos límites de implementación.
+
+Su respuesta puede resumirse como:
+
+``` text
+FRUA
+Mapas / Eventos / Contenido de Aventura
+        ↓
+muchas definiciones de juego fijas
+
+Dungeon Craft
+Mapas / Eventos / Contenido de Aventura
+        +
+Objetos / Monstruos / Hechizos
+Clases / Razas / Habilidades
+        +
+mayor secuenciación/extensibilidad
+```
+
+Esto resolvió restricciones creativas reales.
+
+Pero introdujo un nuevo costo.
+
+------------------------------------------------------------------------
+
+## 17. La extensibilidad tiene un precio
+
+A medida que más del juego se vuelve configurable, el autor debe entender más del juego.
+
+una progresión conceptual útil es:
+
+### Capa 1 — Creación de Aventuras
+
+``` text
+mapas
+eventos
+misiones
+encuentros
+PNJs
+tesoros
+estado del mundo
+```
+
+### Capa 2 — Creación de Contenido de Juego
+
+``` text
+objetos
+criaturas
+clases
+razas
+hechizos
+habilidades
+```
+
+### Capa 3 — Creación de Reglas / Modificación
+
+``` text
+fórmulas
+secuencias
+comportamiento
+mecánicas del sistema
+extensiones de runtime
+```
+
+Estas capas no necesitan exponerse simultáneamente.
+
+### Lección para LoF
+
+> **La extensibilidad debería crecer en capas en lugar de destruir la simple abstracción que encuentra un nuevo autor.**
+
+Un creador debería poder hacer una aventura completa sin necesidad de entender primero cómo funciona la base de datos de hechizos o las fórmulas de combate.
+
+------------------------------------------------------------------------
+
+## 18. Editor Progresivo — semilla generada por este estudio
+
+Esta investigación produjo un posible concepto de UX para LoF.
+
+Un modo de fallo común de herramientas poderosas es la reacción al primer lanzamiento:
+
+> "¿Qué diablos es este panel de control empresarial?"
+
+Esto es especialmente relevante para usuarios más jóvenes o creadores no familiarizados con herramientas clásicas de construcción de RPG.
+
+### Posible solución: divulgación progresiva a través del dominio
+
+El Editor podría comenzar opcionalmente con una superficie de herramientas reducida:
+
+``` text
+PRINCIPIANTE
+
+Celda
+Muro
+Puerta
+Objeto
+Probar
+```
+
+A medida que el autor usa y prueba con éxito conceptos, nuevas herramientas se hacen visibles:
+
+``` text
+Zonas
+Eventos
+Transferencias
+Condiciones
+Cadenas de Eventos
+Creación de Criaturas
+Creación de Objetos
+...
+```
+
+La progresión podría comportarse casi como logros.
+
+Sin embargo:
+
+> **Esto nunca debe ser una barrera de capacidad.**
+
+Configuraciones posibles:
+
+``` text
+Experiencia del Editor
+
+Progresiva
+Estándar
+Completa / Experto
+```
+
+Un comando de consola o ajuste podría desbloquear todo inmediatamente.
+
+### Propiedad arquitectónica importante
+
+El formato del proyecto permanece idéntico.
+
+``` text
+Modo Progresivo
+Modo Estándar
+Modo Experto
+       │
+       ▼
+mismo modelo de creación
+mismos datos
+mismo runtime
+```
+
+Solo cambia la superficie de UX visible.
+
+### Dominio del autor persistente
+
+La progresión probablemente debería pertenecer al **autor**, no a cada proyecto.
+
+Una vez que alguien ha demostrado familiaridad con Eventos, un nuevo proyecto no debería ocultar Eventos nuevamente.
+
+Esto convierte la progresión en una capa pedagógica sobre el editor más que en un molienda estilo juego.
+
+------------------------------------------------------------------------
+
+## 19. Los Recursos de Godot pueden eliminar la necesidad de bases de datos al estilo Dungeon Craft
+
+Dungeon Craft necesitaba bases de datos explícitas para clases, monstruos, objetos, hechizos y definiciones relacionadas.
+
+LoF se está construyendo sobre Godot y ya usa creación basada en Recursos.
+
+Por lo tanto, no deberíamos copiar la implementación histórica cuando la plataforma moderna ya resuelve el problema subyacente.
+
+Un posible modelo de LoF:
 
 ``` text
 res://users/
@@ -955,56 +1264,55 @@ res://users/
 └── ...
 ```
 
-Each authored definition can be a `.tres` Resource.
+Cada definición creada puede ser un Recurso `.tres`.
 
-The Resource itself can remain the source of truth.
+El Recurso mismo puede permanecer como fuente de verdad.
 
-### Avoid parallel truth
+### Evitar paralelos de verdad
 
-Avoid unnecessarily creating:
+Evitar crear innecesariamente:
 
 ``` text
 bronze_sword.tres
         +
 items.json
         +
-database row
+fila de base de datos
 ```
 
-unless a concrete future requirement justifies it.
+a menos que un requisito futuro concreto lo justifique.
 
-Otherwise the system immediately creates the question:
+De lo contrario, el sistema crea inmediatamente la pregunta:
 
-> Which representation is authoritative?
+> ¿Qué representación es autoritativa?
 
-### Better approach
+### Mejor enfoque
 
 ``` text
-Resources
+Recursos
    ↓
-scan / index
+escanear / indexar
    ↓
-derived registry
+registro derivado
 ```
 
-Indexes and caches may exist for performance or lookup, but they need
-not become an additional user-maintained database.
+Los índices y cachés pueden existir por razones de rendimiento o búsqueda, pero no necesitan convertirse en una base de datos adicional mantenida por el usuario.
 
 ------------------------------------------------------------------------
 
-## 20. Core content and user content can share the same contracts
+## 20. El contenido central y el contenido del usuario pueden compartir los mismos contratos
 
-A useful future organization could conceptually distinguish:
+Una organización útil futura podría distinguir conceptualmente:
 
 ``` text
 core/
-  official/default LoF content
+  contenido oficial/predeterminado de LoF
 
 users/
-  user-authored content
+  contenido creado por usuarios
 ```
 
-But the Runtime should ideally consume the same semantic resource types:
+Pero el Runtime debería consumir idealmente los mismos tipos de recurso semántico:
 
 ``` text
 CreatureDefinition
@@ -1013,565 +1321,511 @@ SpellDefinition
 ...
 ```
 
-The distinction is provenance, not type.
+La distinción es procedencia, no tipo.
 
-A custom creature should not require an entirely separate runtime path
-merely because it was authored by a user.
+Una criatura personalizada no debería requerir una ruta de runtime completamente separada solo porque fue creada por un usuario.
 
 ------------------------------------------------------------------------
 
-## 21. Stable identity matters more than database position
+## 21. La identidad estable importa más que la posición de la base de datos
 
-Dungeon Craft also exposes a portability problem: once different designs
-can redefine their databases, positional IDs become dangerous.
+Dungeon Craft también expone un problema de portabilidad: una vez que diferentes diseños pueden redefinir sus bases de datos, las IDs posicionales se vuelven peligrosas.
 
-Conceptually:
+Conceptualmente:
 
 ``` text
-Design A
-Item #37 = Long Sword
+Diseño A
+Objeto #37 = Espada Larga
 
-Design B
-Item #37 = Dead Rat
+Diseño B
+Objeto #37 = Rata Muerta
 ```
 
-A transferred reference to `37` is no longer semantically stable.
+Una referencia transferida a `37` ya no es semánticamente estable.
 
-LoF should eventually prefer stable resource identity over accidental
-position.
+LoF debería preferir eventualmente identidad de recurso estable sobre posición accidental.
 
-Possible mechanisms include:
+Mecanismos posibles incluyen:
 
 ``` text
-stable ID
-qualified name
+ID estable
+nombre calificado
 UUID
-resource identity
+identidad de recurso
 ```
 
-The exact solution is future work.
+La solución exacta es trabajo futuro.
 
-The important question is:
+La pregunta importante es:
 
-> **How does a resource preserve identity when moved, reused, packaged,
-> or transferred between projects?**
+> **¿Cómo mantiene un recurso su identidad cuando se mueve, se reutiliza, se empaqueta o se transfiere entre proyectos?**
 
 ------------------------------------------------------------------------
 
-## 22. Authoring library versus distributed adventure
+## 22. Biblioteca de creación versus aventura distribuida
 
-This is one of the strongest conclusions from the Dungeon Craft
-comparison.
+Una de las conclusiones más fuertes de la comparación con Dungeon Craft.
 
-The author's working library and the player's distributed adventure do
-not need to be the same thing.
+La biblioteca de trabajo del autor y la aventura distribuida del jugador no necesitan ser la misma cosa.
 
-### Authoring
+### Creación
 
 ``` text
 users/
-├── hundreds of creatures
-├── hundreds of items
-├── personal art library
-├── spell definitions
-└── reusable templates
+├── cientos de criaturas
+├── cientos de objetos
+├── biblioteca personal de arte
+├── definiciones de hechizos
+└── plantillas reutilizables
 ```
 
-An adventure may use only a small subset.
+Una aventura puede usar solo un subconjunto.
 
-### Packaging
+### Empaquetado
 
-When publishing:
+Cuando se publica:
 
 ``` text
-Adventure
+Aventura
    ↓
-Dependency Scan
+Exploración de Dependencias
    ↓
-Required Resources
+Recursos Requeridos
    ↓
-Package
+Empaquetar
 ```
 
-Result:
+Resultado:
 
 ``` text
-ADVENTURE PACKAGE
-├── manifest
-├── maps
-├── events
-├── required resources
-└── required assets
+PAQUETE DE AVENTURA
+├── manifiesto
+├── mapas
+├── eventos
+├── recursos requeridos
+└── assets requeridos
 ```
 
-### Principle
+### Principio
 
-> **Reusable during authoring; self-contained when published.**
+> **Reutilizable durante la creación; autocontenida cuando se publica.**
 
-This avoids turning the player's installation into a
-dependency-management exercise.
+Esto evita convertir la instalación del jugador en un ejercicio de gestión de dependencias.
 
 ------------------------------------------------------------------------
 
-## 23. Avoid "npm for dungeons"
+## 23. Evitar "npm para mazmorras"
 
-The dangerous alternative is permanent external dependencies:
+La alternativa peligrosa es dependencias externas permanentes:
 
 ``` text
-Adventure
-  requires:
+Aventura
+  requiere:
     ItemLibrary 2.7
     SpellPack 4.2
     MetalCreatures 1.9
 ```
 
-This eventually produces:
+Esto eventualmente produce:
 
--   version conflicts;
--   missing dependencies;
--   incompatible updates;
--   Workshop dependency chains;
--   non-reproducible adventures.
+-   conflictos de versiones;
+-   dependencias faltantes;
+-   actualizaciones incompatibles;
+-   cadenas de dependencias de Workshop;
+-   aventuras no reproducibles.
 
-LoF should strongly consider making the published adventure a **snapshot
-of the resources it actually requires**, rather than assuming the
-player's authoring library matches the creator's.
+LoF debería considerar seriamente que la aventura publicada sea un **instantánea de los recursos que realmente requiere**, en lugar de asumir que la biblioteca de creación del jugador coincide con la del creador.
 
-This does not prohibit reusable libraries during development.
+Esto no prohibía bibliotecas reutilizables durante el desarrollo.
 
-It separates **authoring reuse** from **distribution reproducibility**.
+Separa **reutilización durante la creación** de **reproducibilidad en la distribución**.
 
 ------------------------------------------------------------------------
 
-## 24. Steam Workshop implications
+## 24. Implicaciones para Steam Workshop
 
-This architecture maps naturally onto a future Workshop model.
+Esta arquitectura se asigna de forma natural a un futuro modelo de Workshop.
 
 ``` text
-AUTHORING LIBRARY
+BIBLIOTECA DE CREACIÓN
        ↓
-Adventure uses selected resources
+La aventura usa recursos seleccionados
        ↓
-EXPORT / PACKAGE
+EXPORTAR / EMPAQUETAR
        ↓
-Adventure Package
+Paquete de Aventura
        ↓
 Steam Workshop
        ↓
-Player subscribes
+El jugador se suscribe
        ↓
-Runtime loads package
+El Runtime carga el paquete
 ```
 
-The player should ideally not need:
+El jugador no debería necesariamente:
 
--   the author's `users/` directory;
--   external databases;
--   manual asset installation;
--   knowledge of editor internals.
+-   la carpeta `users/` del autor;
+-   bases de datos externas;
+-   instalación manual de assets;
+-   conocimiento de internos del editor.
 
-A small manifest could provide distribution metadata such as:
+Un pequeño manifiesto podría proporcionar metadatos de distribución como:
 
 ``` text
-Adventure ID
-Version
-Author
-Minimum compatible LoF version
-Package hash
+ID de Aventura
+Versión
+Autor
+Versión mínima compatible de LoF
+Hash del paquete
 ```
 
-The manifest would describe the package; it would not need to become the
-source of truth for the game's authored content.
+El manifiesto describiría el paquete; no necesitaría convertirse en la fuente de verdad para el contenido creado del juego.
 
 ------------------------------------------------------------------------
 
-## 25. A very distant multiplayer implication
+## 25. Una implicación multijugador muy distante
 
-Networking is explicitly **not an active LoF requirement**. If it ever
-exists, it would be a post-development addition dependent on remaining
-energy, audience and practical value.
+El multijugador no es explícitamente un requisito activo de LoF. Si alguna vez existe, sería una adición posterior al desarrollo dependiente de energía restante, audiencia y valor práctico.
 
-However, good packaging decisions today can avoid needless obstacles
-later.
+Sin embargo, buenas decisiones de empaquetado hoy pueden evitar obstáculos innecesarios más adelante.
 
-A self-contained adventure gives multiplayer peers a simple
-compatibility question:
+Una aventura autocontenida da a los pares multijugador una pregunta de compatibilidad simple:
 
 ``` text
-Adventure ID
-Version
-Package Hash
+ID de Aventura
+Versión
+Hash del Paquete
 ```
 
-Before a session:
+Antes de una sesión:
 
 ``` text
-HOST
-Adventure: crypt_of_berzo
-Version: 1.4
+ANFITRIÓN
+Aventura: crypt_of_berzo
+Versión: 1.4
 Hash: ABC123
 
-CLIENT
-Do I have ABC123?
+CLIENTE
+¿Tengo ABC123?
 
-YES → join
+SÍ → unirse
 
-NO → obtain package → verify → join
+NO → obtener paquete → verificar → unirse
 ```
 
-Both sides already possess identical static definitions:
+Ambos lados ya poseen definiciones estáticas idénticas:
 
 ``` text
-maps
-events
-creatures
-items
+mapas
+eventos
+criaturas
+objetos
 assets
-rules exposed by the package
+reglas expuestas por el paquete
 ```
 
-Networking can then focus more heavily on synchronizing **state**.
+El multijugador puede entonces enfocarse más en sincronizar **estado**.
 
 ------------------------------------------------------------------------
 
-## 26. Discrete world state is networking-friendly
+## 26. El estado del mundo discreto es amigable para multijugador
 
-LoF already favours many discrete world states over full physical
-simulation.
+LoF ya favorece muchos estados del mundo discretos sobre una simulación física completa.
 
-Examples:
-
-``` text
-OPEN / CLOSED
-ALIVE / DEAD
-ACTIVE / INACTIVE
-LIT / UNLIT
-BURNING / EXTINGUISHED
-UP / DOWN
-```
-
-A hypothetical multiplayer system could synchronize states such as:
+Ejemplos:
 
 ``` text
-party position
-party facing
-door state
-enemy state
-loot state
-quest state
-turn/action state
+ABIERTO / CERRADO
+VIVO / MUERTO
+ACTIVO / INACTIVO
+ILUMINADO / NO ILUMINADO
+EN LLAMAS / APAGADO
+ARRIBA / ABAJO
 ```
 
-rather than attempting to synchronize a large continuous physics
-simulation.
+Un sistema multijugador hipotético podría sincronizar estados como:
 
-This does **not** make networking trivial.
+``` text
+posición del grupo
+orientación del grupo
+estado de la puerta
+estado del enemigo
+estado del botín
+estado de la misión
+estado de turno/acción
+```
 
-It merely means that the current conceptual model is not inherently
-hostile to a future state-synchronization approach.
+en lugar de intentar sincronizar una gran simulación física continua.
+
+Esto no hace el multijugador trivial.
+
+Solo significa que el modelo conceptual actual no es inherentemente hostil a un futuro enfoque de sincronización de estados.
 
 ------------------------------------------------------------------------
 
-## 27. Slow cooperative play is a legitimate future design space
+## 27. La cooperación lenta es un espacio de diseño futuro legítimo
 
-If multiplayer were ever explored, it would not necessarily need to
-imitate real-time action games.
+Si el multijugador alguna vez se explorara, no tendría necesariamente imitar juegos de acción en tiempo real.
 
-There are established audiences for slow multiplayer decision-making in
-strategy games and board-game-like experiences.
+Hay audiencias establecidas para la toma de decisiones multijugador lenta en juegos de estrategia y experiencias similares a juegos de mesa.
 
-A dungeon crawler could theoretically explore:
+Una crawler de mazmorra podría teóricamente explorar:
 
 ``` text
-Player A action
+Acción del Jugador A
       ↓
-world resolves
+el mundo resuelve
       ↓
-Player B action
+Acción del Jugador B
       ↓
-world resolves
+el mundo resuelve
 ```
 
-or other turn/barrier models.
+u otros modelos por turnos o de barrera.
 
-This is not a feature proposal.
+Esto no es una propuesta de característica.
 
-It is simply a reminder:
+Es simplemente un recordatorio:
 
-> **"Multiplayer" does not imply "fast real-time networking."**
+> **"Multijugador" no implica "multijugador en tiempo real rápido".**
 
-If LoF's systemic and state-driven model ever made slow cooperative
-dungeon exploration attractive, the design space exists.
+Si el modelo sistémico y basado en estados de LoF alguna vez hiciera atractiva la exploración colaborativa lenta de mazmorras, el espacio de diseño existe.
 
 ------------------------------------------------------------------------
 
-## 28. Three distinct products
+## 28. Tres productos distintos
 
-A useful final abstraction is to treat the future ecosystem as three
-responsibilities:
+Una abstracción final útil es tratar el ecosistema futuro como tres responsabilidades:
 
 ``` text
-AUTHORING TOOL
-LoF Editor
+HERRAMIENTA DE CREACIÓN
+Editor de LoF
 
-      ↓ produces
+      ↓ produce
 
-CONTENT PRODUCT
-Adventure / Campaign Package
+PRODUCTO DE CONTENIDO
+Paquete de Aventura / Campaña
 
-      ↓ consumed by
+      ↓ consumido por
 
-EXECUTION PRODUCT
-LoF Runtime
+PRODUCTO DE EJECUCIÓN
+Runtime de LoF
 ```
 
-They may share code and technology, but they serve different users and
-responsibilities.
+Pueden compartir código y tecnología, pero sirven a usuarios y responsabilidades distintas.
 
 ### Editor
 
-Optimized for creators.
+Optimizado para creadores.
 
-### Adventure Package
+### Paquete de Aventura
 
-Portable, versionable, reproducible authored content.
+Portátil, versionable, contenido creado reproducible.
 
 ### Runtime
 
-Interprets and executes the package.
+Interpreta y ejecuta el paquete.
 
-This distinction becomes particularly valuable for:
+Esta distinción es especialmente valiosa para:
 
 -   Workshop;
--   standalone distribution;
--   validation;
--   compatibility;
--   multiplayer;
--   future community content.
+-   distribución independiente;
+-   validación;
+-   compatibilidad;
+-   multijugador;
+-   contenido comunitario futuro.
 
 ------------------------------------------------------------------------
 
-# 29. Questions to ask again when LoF reaches the relevant cuts
+# 29. Preguntas a hacer de nuevo cuando LoF alcance los recortes pertinentes
 
-This document should be revisited when any of the following systems
-become active work.
+Este documento debería revisarse cuando cualquiera de los siguientes sistemas se convierta en trabajo activo.
 
-### Event Authoring
+### Creación de Eventos
 
--   What is the smallest useful domain vocabulary?
--   Can the author express RPG intent without generic scripting?
--   Which conditions and event exits deserve first-class concepts?
--   Where should event state live?
--   How do we keep placement separate from behaviour?
+-   ¿Cuál es el vocabulario de dominio más pequeño útil?
+-   ¿Puede el autor expresar intención de RPG sin secuenciación genérica?
+-   ¿Qué condiciones y salidas de eventos merecen conceptos de primer nivel?
+-   ¿Dónde debe vivir el estado del evento?
+-   ¿Cómo mantenemos la colocación separada del comportamiento?
 
-### Regions / Zones
+### Regiones / Zonas
 
--   Which properties are repeated enough to deserve regional
-    inheritance/context?
--   What belongs to Cell/Edge and what belongs above them?
--   Are zones purely editorial, runtime-relevant, or both?
+-   ¿Qué propiedades se repiten lo suficiente como para merecer herencia/contexto regional?
+-   ¿Qué pertenece a Cell/Edge y qué pertenece encima de ellos?
+-   ¿Son las zonas puramente editoriales, relevantes para el runtime, o ambas?
 
-### Testing
+### Pruebas
 
--   What is Preview responsible for?
--   What requires Full Runtime?
--   Do we need "Test From Here" and "Test From Start"?
--   Do we need reproducible Test Context presets?
+-   ¿Qué es responsable Vista Previa?
+-   ¿Qué requiere Runtime Completo?
+-   ¿Necesitamos "Probar Desde Aquí" y "Probar Desde el Inicio"?
+-   ¿Necesitamos contextos de prueba preestablecidos reproducibles?
 
-### Game Content Authoring
+### Creación de Contenido de Juego
 
--   Which definitions should users be able to create?
--   Items?
--   Creatures?
--   Classes?
--   Races?
--   Spells?
--   Status effects?
--   Rules?
+-   ¿Qué definiciones deberían poder crear los usuarios?
+-   ¿Objetos?
+-   ¿Criaturas?
+-   ¿Clases?
+-   ¿Razas?
+-   ¿Hechizos?
+-   ¿Efectos de estado?
+-   ¿Reglas?
 
-### UX Complexity
+### Complejidad de UX
 
--   Should advanced systems appear progressively?
--   Is a Progressive / Standard / Full mode useful?
--   Which concepts constitute meaningful author mastery?
+-   ¿Deberían aparecer los sistemas avanzados progresivamente?
+-   ¿Es útil un modo Progresivo / Estándar / Completo?
+-   ¿Qué conceptos constituyen un dominio significativo del autor?
 
-### Resource Identity
+### Identidad de Recursos
 
--   How does an authored Resource retain stable identity?
--   Can it safely move between projects?
--   What happens when two packages contain resources with the same
-    human-readable name?
--   Do we need qualified IDs or UUIDs?
+-   ¿Cómo mantiene un recurso creado su identidad estable?
+-   ¿Puede moverse de forma segura entre proyectos?
+-   ¿Qué sucede cuando dos paquetes contienen recursos con el mismo nombre legible por humanos?
+-   ¿Necesitamos IDs calificados o UUIDs?
 
-### Packaging
+### Empaquetado
 
--   What is the unit of distribution?
--   Does export snapshot all required Resources?
--   How are dependencies discovered?
--   How are missing resources diagnosed?
--   What belongs in the manifest?
--   How is package compatibility versioned?
+-   ¿Cuál es la unidad de distribución?
+-   ¿El exportado captura instantáneas de todos los Recursos requeridos?
+-   ¿Cómo se descubren las dependencias?
+-   ¿Cómo se diagnosticen los recursos faltantes?
+-   ¿Qué pertenece al manifiesto?
+-   ¿Cómo se versiona la compatibilidad del paquete?
 
 ### Workshop
 
--   Can subscribing be equivalent to "install and play"?
--   Can a package be reproduced independently of the author's `users/`
-    folder?
--   How are updates and saves handled across package versions?
+-   ¿Puede suscribirse ser equivalente a "instalar y jugar"?
+-   ¿Puede un paquete reproducirse independientemente de la carpeta `users/` del autor?
+-   ¿Cómo se manejan las actualizaciones y guardados entre versiones del paquete?
 
-### Campaign
+### Campaña
 
--   Does LoF eventually need an explicit Campaign abstraction?
--   Is Adventure sufficient?
--   What state, if any, persists above an Adventure?
--   Can independent adventures share a party or world state without
-    fragile coupling?
+-   ¿LoF eventualmente necesita una abstracción explícita de Campaña?
+-   ¿Es Aventura suficiente?
+-   ¿Qué estado, si alguno, persiste por encima de una Aventura?
+-   ¿Pueden aventuras independientes compartir un grupo o estado del mundo sin acoplamiento frágil?
 
-### Multiplayer --- only if ever relevant
+### Multijugador — solo si alguna vez es relevante
 
--   Can both peers verify an identical Adventure Package?
--   Which state is authoritative?
--   Which states must synchronize?
--   Can the discrete world model support slow/turn-based cooperation
-    cleanly?
--   Does multiplayer require changes to authored content, or only to
-    execution?
+-   ¿Pueden ambos pares verificar un Paquete de Aventura idéntico?
+-   ¿Qué estado es autoritativo?
+-   ¿Qué estados deben sincronizarse?
+-   ¿Puede el modelo discreto del mundo soportar colaboración lenta/por turnos de forma limpia?
+-   ¿Requiere multijugador cambios en el contenido creado, o solo en la ejecución?
 
 ------------------------------------------------------------------------
 
-# 30. Working principles extracted from the study
+# 30. Principios de trabajo extraídos del estudio
 
-These are not binding LoF architecture decisions. They are the strongest
-working principles produced by the archaeological comparison.
+Estos no son decisiones arquitectónicas vinculantes de LoF. Son los principios de trabajo más fuertes producidos por la comparación arqueológica.
 
-> **1. The Runtime belongs to LoF; the author should express intent, not
-> implementation.**
+> **1. El Runtime pertenece a LoF; el autor debería expresar intención, no implementación.**
 
-> **2. Runtime privacy does not imply that game content must be closed
-> to authors.**
+> **2. La privacidad del Runtime no implica que el contenido del juego deba estar cerrado para los autores.**
 
-> **3. World placement, event behaviour and runtime execution are
-> separate responsibilities.**
+> **3. La colocación del mundo, el comportamiento de eventos y la ejecución del runtime son responsabilidades separadas.**
 
-> **4. Speak the language of RPG design rather than exposing generic
-> programming concepts unnecessarily.**
+> **4. Habla el idioma del diseño de RPG en lugar de exponer conceptos de programación genéricos innecesariamente.**
 
-> **5. A finite domain-specific event vocabulary can be extremely
-> powerful through composition.**
+> **5. Un vocabulario finito de eventos específicos de dominio puede ser extremadamente potente mediante composición.**
 
-> **6. Preview and full playtesting solve different problems.**
+> **6. Vista previa y prueba completa resuelven problemas distintos.**
 
-> **7. Testing an RPG eventually requires reproducible world/party
-> state.**
+> **7. Probar un RPG eventualmente requiere estado del mundo/grupo reproducible.**
 
-> **8. Implementation limits should not silently become permanent
-> conceptual limits.**
+> **8. Los límites de implementación no deben convertirse silenciosamente en límites conceptuales permanentes.**
 
-> **9. Extensibility should be layered. More power should not force more
-> complexity on every author.**
+> **9. La extensibilidad debería estar en capas. Más potencia no debería forzar más complejidad a cada autor.**
 
-> **10. Progressive disclosure may allow one editor to serve beginners
-> and experts without maintaining separate data models.**
+> **10. La divulgación progresiva podría permitir que un único editor sirva a principiantes y expertos sin mantener modelos de datos separados.**
 
-> **11. Godot Resources can serve as authored game data; do not
-> introduce parallel JSON/databases without a concrete reason.**
+> **11. Los Recursos de Godot pueden servir como datos creados; no introduzcas paralelos JSON/bases de datos sin una razón concreta.**
 
-> **12. Registries and indexes can be derived from Resources rather than
-> becoming competing sources of truth.**
+> **12. Los registros e índices pueden derivarse de los Recursos en lugar de convertirse en fuentes de verdad rivales.**
 
-> **13. Stable identity matters when resources become reusable, portable
-> or distributable.**
+> **13. La identidad estable importa cuando los recursos se vuelven reutilizables, portátiles o distribuibles.**
 
-> **14. The user's authoring library and the published adventure should
-> be separate concepts.**
+> **14. La biblioteca de creación del usuario y la aventura publicada deberían ser conceptos separados.**
 
-> **15. Reuse during authoring; package self-contained content for
-> distribution.**
+> **15. Reutiliza durante la creación; empaqueta contenido autocontenida para la distribución.**
 
-> **16. Workshop should not become dependency management for the
-> player.**
+> **16. Workshop no debería convertirse en gestión de dependencias para el jugador.**
 
-> **17. A reproducible, versioned Adventure Package also creates a clean
-> foundation for any extremely distant networking experiment.**
+> **17. Un Paquete de Aventura reproducible y versionado también crea una base limpia para cualquier experimento de red muy distante.**
 
-> **18. Do not implement speculative systems merely because the
-> architecture leaves room for them. Preserve options without paying
-> their complexity cost early.**
+> **18. No implementes sistemas especulativos solo porque la arquitectura deja espacio para ellos. Preserva opciones sin pagar su costo de complejidad temprano.**
 
 ------------------------------------------------------------------------
 
-# 31. Final archaeological synthesis
+# 31. Síntesis arqueológica final
 
-FRUA's great achievement was not unlimited flexibility.
+El gran logro de FRUA no fue la flexibilidad ilimitada.
 
-It was **controlled abstraction**.
+Fue **abstracción controlada**.
 
-SSI allowed an adventure designer to think in terms of:
+SSI permitió a un diseñador de aventuras pensar en términos de:
 
 ``` text
-maps
-rooms
-walls
-events
-quests
-encounters
-NPCs
-treasure
+mapas
+habitaciones
+muros
+eventos
+misiones
+encuentros
+PNJs
+tesoros
 ```
 
-while keeping the engine underneath the table.
+mientras mantenía el motor debajo de la mesa.
 
-The community eventually demonstrated the weakness of that model: some
-concepts SSI considered fixed implementation were concepts authors
-considered part of their creative language.
+La comunidad eventualmente demostró la debilidad de ese modelo: algunos conceptos que SSI consideraba implementación fija eran conceptos que los autores consideraban parte de su lenguaje creativo.
 
-Dungeon Craft responded by opening much more of the system:
+Dungeon Craft respondió abriendo mucho más del sistema:
 
 ``` text
-items
-spells
-classes
-races
-abilities
-rules
-scripting
+objetos
+hechizos
+clases
+razas
+habilidades
+reglas
+secuenciación
 ```
 
-and consequently discovered the opposite problem:
+y, como consecuencia, descubrió el problema opuesto:
 
-> **Freedom creates complexity.**
+> **La libertad crea complejidad.**
 
-For LoF, the useful target is therefore neither "FRUA but closed" nor
-"everything exposed like an SDK".
+Para LoF, el objetivo útil, por tanto, no es ni "FRUA pero cerrado" ni "todo expuesto como un SDK".
 
-The more promising direction is:
+La dirección más prometedora es:
 
 ``` text
-simple RPG authoring surface
+superficie de creación de RPG simple
           ↓
-optional deeper content authoring
+creación de contenido más profunda opcional
           ↓
-optional advanced/system authoring
+creación avanzada/sistema opcional
 ══════════════════════════════════
         Runtime boundary
 ══════════════════════════════════
           ↓
-      LoF execution
+      Ejecución de LoF
 ```
 
-with Godot Resources providing authored data, the Compiler providing
-validation and translation, and future packaging turning a creator's
-working environment into a self-contained Adventure Package.
+con los Recursos de Godot proporcionando datos creados, el Compilador proporcionando validación y traducción, y el empaquetado futuro convirtiendo el entorno de trabajo de un creador en un Paquete de Aventura autocontenido.
 
-The central question to preserve is:
+La pregunta central a preservar es:
 
-> **How much creative language can we give the author while keeping the
-> machinery that executes that language out of their way?**
+> **¿Cuánta lenguaje creativo podemos dar al autor manteniendo la maquinaria que ejecuta ese lenguaje fuera de su camino?**
 
-That is the question FRUA asked in 1993.
+Esa es la pregunta que FRUA planteó en 1993.
 
-Dungeon Craft shows what happened when users answered:
+Dungeon Craft muestra lo que sucedió cuando los usuarios respondieron:
 
-> **More.**
+> **Más.**
 
-And that is exactly why both belong together in RPG Archaeology.
+Y eso es exactamente por qué ambos pertenecen juntos en la Arqueología de RPG.
