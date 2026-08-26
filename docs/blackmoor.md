@@ -1,6 +1,5 @@
 # Blackmoor — Arqueología del espacio antes de *Dungeons & Dragons*
 
-**By Metal for Lands of Folklore**
 
 ## 1. Propósito de la investigación
 

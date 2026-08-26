@@ -4,7 +4,7 @@
 ![Bloodwych (1989) — RPG Archaeology](../assets/images/games/bloodwych/Bloodwych-mini.png)
 </figure>
 
-[▶ Watch the episode on YouTube](YOUTUBE_VIDEO_URL)
+[▶ Watch the episode on YouTube](https://youtu.be/-Ak-0UIx-I0)
 
 **Design, systems, and tooling archaeology report**
 

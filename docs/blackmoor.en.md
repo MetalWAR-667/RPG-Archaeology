@@ -1,6 +1,5 @@
 # Blackmoor — Spatial Archaeology Before *Dungeons & Dragons*
 
-**By Metal for Lands of Folklore**
 
 ## 1. Purpose of the research
 

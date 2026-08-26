@@ -12,7 +12,7 @@
 ![The Dark Heart of Uukrul — Archaeological Chronicles — RPG Archaeology](../assets/images/games/uukrul/Uukrul_RPG_Archaeology_YouTube_Thumbnail.png)
 </figure>
 
-[▶ Watch the episode on YouTube](YOUTUBE_VIDEO_URL)
+[▶ Watch the episode on YouTube](https://www.youtube.com/watch?v=xrfpjrI8YGI&list=PLSfHhJ-i_zDM&index=6)
 
 ## Prologue --- We Entered Looking for a Map
 

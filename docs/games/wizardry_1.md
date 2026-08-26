@@ -4,7 +4,7 @@
 ![Wizardry: Proving Grounds of the Mad Overlord — RPG Archaeology](../assets/images/games/wizardry/Diseccionando Wizardry I.png)
 </figure>
 
-[▶ Ver episodio en YouTube](YOUTUBE_VIDEO_URL)
+[▶ Ver episodio en YouTube](https://youtu.be/8hvuzZrDd20)
 
 ## 1. El espécimen
 

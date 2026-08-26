@@ -4,6 +4,16 @@
 >
 > Este documento no pretende establecer una única línea de descendencia inevitable. Recoge innovaciones que, acumuladas durante casi dos siglos, acabarán formando parte del lenguaje del role-playing game.
 
+
+---
+
+<figure markdown>
+![Antes del RPG — De los wargames al juego de rol — RPG Archaeology](assets/images/origins/from_rpg.png)
+</figure>
+
+[▶ Ver episodio en YouTube](https://youtu.be/8hvuzZrDd20)
+
+
 ---
 
 ## 1. Antes del RPG: simular una guerra

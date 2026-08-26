@@ -1,5 +1,16 @@
 # The Twin Cities School — El laboratorio antes de D&D
 
+
+---
+
+<figure markdown>
+![The Twin Cities School — El laboratorio antes de D&D — RPG Archaeology](assets/images/origins/twin_cities.png)
+</figure>
+
+[▶ Ver episodio en YouTube](https://youtu.be/uyHjtO0QtMw)
+
+---
+
 ## 1. Propósito de la investigación
 
 La historia popular de *Dungeons & Dragons* suele condensarse alrededor de dos nombres:

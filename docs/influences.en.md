@@ -4,6 +4,15 @@
 >
 > This document does not aim to establish a single inevitable line of descent. It collects innovations that, accumulated over nearly two centuries, would eventually become part of the language of role-playing games.
 
+
+---
+
+<figure markdown>
+![From Wargames to Tabletop Role-Playing Games — RPG Archaeology](assets/images/origins/from_rpg.png)
+</figure>
+
+[▶ Ver episodio en YouTube](https://youtu.be/8hvuzZrDd20)
+
 ---
 
 ## 1. Before the RPG: simulating war
