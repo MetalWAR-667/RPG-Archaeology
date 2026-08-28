@@ -19,7 +19,7 @@
 ![Unlimited Adventures / Dungeon Craft — RPG Archaeology](../assets/images/games/frua/frua.png)
 </figure>
 
-[▶ Watch the episode on YouTube](YOUTUBE_VIDEO_URL)
+[▶ Watch the episode on YouTube](https://www.youtube.com/watch?v=-4GsVs7DFZM)
 
 ## 0. The human factor, production and community
 
